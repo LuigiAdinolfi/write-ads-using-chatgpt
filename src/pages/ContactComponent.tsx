@@ -102,7 +102,7 @@ const ContactComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button">
+                    <div className="confirm-button" onClick={() => window.location.href = "output"}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -130,7 +130,7 @@ const ContactComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button">
+                    <div className="confirm-button" onClick={() => window.location.href = "output"}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -158,7 +158,7 @@ const ContactComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button">
+                    <div className="confirm-button" onClick={() => window.location.href = "output"}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"

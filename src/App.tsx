@@ -9,6 +9,7 @@ import {useEffect} from "react";
 import FindOrPlaceAdComponent from "./pages/FindOrPlaceAdComponent";
 import PriceComponent from "./pages/PriceComponent";
 import ContactComponent from "./pages/ContactComponent";
+import OutputComponent from "./pages/OutputComponent";
 
 function App() {
     const action = useNavigationType();
@@ -52,6 +53,7 @@ function App() {
             <Route path="/categories" element={<CategoriesComponent/>}/>
             <Route path="/price" element={<PriceComponent/>}/>
             <Route path="/contact" element={<ContactComponent/>}/>
+            <Route path="/output" element={<OutputComponent/>}/>
         </Routes>
     );
 }
