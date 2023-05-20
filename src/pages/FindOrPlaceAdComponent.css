@@ -44,20 +44,21 @@
 }
 
 .subtitle-home {
-    top: 8rem;
+    top: 9rem;
     position: relative;
     text-align: center;
-    right: 16.2rem;
+    right: 18rem;
     font-size: 3rem;
     font-family: var(--font-jost);
 }
 
 .place {
+    height: 6rem;
     display: inline-flex;
     align-items: center;
-    width: 40%;
+    width: 44%;
     padding-left: 2rem;
-    top: 9rem;
+    top: 10rem;
     position: relative;
     text-align: center;
     font-size: 3rem;
@@ -69,7 +70,7 @@
 
 .grid-container-home {
     position: relative;
-    top: 20rem;
+    top: 22rem;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 18rem);

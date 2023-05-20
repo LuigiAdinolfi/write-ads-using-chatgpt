@@ -238,4 +238,8 @@
     background-color: var(--color-darkslategray);
 }
 
-
+.email,
+.phone,
+.form {
+    color: darkgray;
+}
