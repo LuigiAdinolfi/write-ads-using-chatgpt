@@ -6,7 +6,7 @@ const CategoriesComponent: FunctionComponent = () => {
         <div className="page-container">
             <div className="header">
             <div className="title">Marktplatz</div>
-                <div className="back-icon-wrapper">
+                <div className="back-icon-wrapper" onClick={() => window.location.href="/"}>
                     <img
                         className="back-icon"
                         alt=""
@@ -16,7 +16,7 @@ const CategoriesComponent: FunctionComponent = () => {
             </div>
             <div className="subtitle">Kategorie auswählen</div>
             <div className="grid-container">
-                <div className="share-button">
+                <div className="share-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -28,7 +28,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Teilen</div>
                     </div>
                 </div>
-                <div className="clean-button">
+                <div className="clean-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -40,7 +40,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Reinigungsarbeiten</div>
                     </div>
                 </div>
-                <div className="maintenance-button">
+                <div className="maintenance-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -57,7 +57,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="support-button">
+                <div className="support-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -69,7 +69,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Alltagsunterstützung</div>
                     </div>
                 </div>
-                <div className="catering-button">
+                <div className="catering-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -81,7 +81,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Verpflegung</div>
                     </div>
                 </div>
-                <div className="transport-button">
+                <div className="transport-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -98,7 +98,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="admin-button">
+                <div className="admin-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -111,7 +111,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Administration</div>
                     </div>
                 </div>
-                <div className="pet-button">
+                <div className="pet-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -123,7 +123,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Haustier</div>
                     </div>
                 </div>
-                <div className="children-button">
+                <div className="children-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -135,7 +135,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Kinder</div>
                     </div>
                 </div>
-                <div className="leisure-button">
+                <div className="leisure-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -147,7 +147,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Freizeigestaltung</div>
                     </div>
                 </div>
-                <div className="courses-button">
+                <div className="courses-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -159,7 +159,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Kurse & Schulungen</div>
                     </div>
                 </div>
-                <div className="products-button">
+                <div className="products-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -171,7 +171,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Produkte</div>
                     </div>
                 </div>
-                <div className="jobs-button">
+                <div className="jobs-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -183,20 +183,19 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Arbeitsstellen</div>
                     </div>
                 </div>
-                <div className="apprenticeships-button">
+                <div className="apprenticeships-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
                             alt=""
-                            src="/study.png"
-                            style={{paddingLeft: 24}}
+                            src="/recommendation.png"
                         />
                     </div>
                     <div className="category-label-wrapper">
                         <div className="category-label">Lehrstellen</div>
                     </div>
                 </div>
-                <div className="consulting-button">
+                <div className="consulting-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -208,7 +207,7 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="category-label">Beratung</div>
                     </div>
                 </div>
-                <div className="diverses-button">
+                <div className="diverses-button" onClick={() => window.location.href = "price"}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"

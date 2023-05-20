@@ -20,7 +20,7 @@ const FindOrPlaceAdComponent: FunctionComponent = () => {
             <div className="place">{`${zipCode} ${place}`}</div>
 
             <div className="grid-container-home">
-                <div className="offer-button">
+                <div className="offer-button" onClick={() => window.location.href = "categories"}>
                     <div className="icon-wrapper-home">
                         <img
                             className="icon-home"
@@ -32,7 +32,7 @@ const FindOrPlaceAdComponent: FunctionComponent = () => {
                         <div className="category-label-home">Angebot</div>
                     </div>
                 </div>
-                <div className="search-button">
+                <div className="search-button" onClick={() => window.location.href = "categories"}>
                     <div className="icon-wrapper-home">
                         <img
                             className="icon-home"
