@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import CategoriesComponent from "./pages/CategoriesComponent";
 import {useEffect} from "react";
-import FindOrPlaceAdComponent from "./pages/FindOrPlaceAdComponent";
+import ChooseAdTypeComponent from "./pages/ChooseAdTypeComponent";
 import PriceComponent from "./pages/PriceComponent";
 import ContactComponent from "./pages/ContactComponent";
 import OutputComponent from "./pages/OutputComponent";
@@ -49,7 +49,7 @@ function App() {
 
     return (
         <Routes>
-            <Route path="/" element={<FindOrPlaceAdComponent/>}/>
+            <Route path="/" element={<ChooseAdTypeComponent/>}/>
             <Route path="/categories" element={<CategoriesComponent/>}/>
             <Route path="/price" element={<PriceComponent/>}/>
             <Route path="/contact" element={<ContactComponent/>}/>

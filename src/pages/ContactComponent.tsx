@@ -51,8 +51,8 @@ const ContactComponent: FunctionComponent = () => {
                             src="/email.png"
                         />
                     </div>
-                    <div className="contact-label-wrapper">
-                        <div className="contact-label">E-Mail</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">E-Mail</div>
                     </div>
                 </div>
                 <div className="phone-button" onClick={() => {
@@ -65,8 +65,8 @@ const ContactComponent: FunctionComponent = () => {
                             src="/telephone.png"
                         />
                     </div>
-                    <div className="contact-label-wrapper">
-                        <div className="contact-label">Telefon</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Telefon</div>
                     </div>
                 </div>
                 <div className="form-button" onClick={() => {
@@ -79,8 +79,8 @@ const ContactComponent: FunctionComponent = () => {
                             src="/online-chat.png"
                         />
                     </div>
-                    <div className="contact-label-wrapper">
-                        <div className="contact-label">Kontaktformular</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Kontaktformular</div>
                     </div>
                 </div>
             </div>

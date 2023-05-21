@@ -22,7 +22,6 @@ const OutputComponent: FunctionComponent = () => {
                     <div className="text">{text}</div>
                 </div>
             </div>
-
             <div className="refresh-icon-wrapper" onClick={() => window.location.href = "output"}>
                 <img
                     className="refresh-icon"
@@ -30,7 +29,6 @@ const OutputComponent: FunctionComponent = () => {
                     src="/refresh.png"
                 />
             </div>
-
             <div className="frame-parent">
                 <div className="output-settings-parent">
                     <div className="output">Inserat publizieren?</div>

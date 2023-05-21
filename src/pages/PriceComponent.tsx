@@ -60,7 +60,6 @@ const PriceComponent: FunctionComponent = () => {
         setShowMoneySettings(false);
     }
 
-
     return (
         <div className="page-container">
             <div className="header">
@@ -85,8 +84,8 @@ const PriceComponent: FunctionComponent = () => {
                             src="/money.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Geld</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Geld</div>
                     </div>
                 </div>
                 <div className="time-button" onClick={() => {
@@ -99,8 +98,8 @@ const PriceComponent: FunctionComponent = () => {
                             src="/timer.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Zeit</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Zeit</div>
                     </div>
                 </div>
                 <div className="shareSomething-button" onClick={() => {
@@ -113,8 +112,8 @@ const PriceComponent: FunctionComponent = () => {
                             src="/exchange.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Tausche gegen...</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Tausche gegen...</div>
                     </div>
                 </div>
             </div>
@@ -188,13 +187,8 @@ const PriceComponent: FunctionComponent = () => {
                         <img className="plus-icon-share" alt="" src="/menu.png"/>
                     </div>
                 </div>
-            </div>
-            }
-
-
+            </div>}
         </div>
-
-
     );
 };
 

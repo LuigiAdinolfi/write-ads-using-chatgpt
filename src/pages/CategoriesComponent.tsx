@@ -5,8 +5,8 @@ const CategoriesComponent: FunctionComponent = () => {
     return (
         <div className="page-container">
             <div className="header">
-            <div className="title">Marktplatz</div>
-                <div className="back-icon-wrapper" onClick={() => window.location.href="/"}>
+                <div className="title">Marktplatz</div>
+                <div className="back-icon-wrapper" onClick={() => window.location.href = "/"}>
                     <img
                         className="back-icon"
                         alt=""
@@ -24,8 +24,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/team.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Teilen</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Teilen</div>
                     </div>
                 </div>
                 <div className="clean-button" onClick={() => window.location.href = "price"}>
@@ -36,8 +36,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/clean.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Reinigungsarbeiten</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Reinigungsarbeiten</div>
                     </div>
                 </div>
                 <div className="maintenance-button" onClick={() => window.location.href = "price"}>
@@ -48,10 +48,10 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/fix.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
+                    <div className="card-label-wrapper">
                         <div className="category-name1">
                             <span className="category-name-txt-container">
-                                <span className="content-1">Gebäudeunterhalt</span>
+                                <span className="content-line-1">Gebäudeunterhalt</span>
                                 <span className="content-2"> & Technik</span>
                             </span>
                         </div>
@@ -65,8 +65,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/love.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Alltagsunterstützung</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Alltagsunterstützung</div>
                     </div>
                 </div>
                 <div className="catering-button" onClick={() => window.location.href = "price"}>
@@ -77,8 +77,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/iftar.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Verpflegung</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Verpflegung</div>
                     </div>
                 </div>
                 <div className="transport-button" onClick={() => window.location.href = "price"}>
@@ -89,10 +89,10 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/sedan.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
+                    <div className="card-label-wrapper">
                         <div className="category-name1">
                             <span className="category-name-txt-container">
-                                <span className="content-1">Begleit- und </span>
+                                <span className="content-line-1">Begleit- und </span>
                                 <span className="content-2">Transportdienste</span>
                             </span>
                         </div>
@@ -107,8 +107,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             style={{paddingLeft: 24}}
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Administration</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Administration</div>
                     </div>
                 </div>
                 <div className="pet-button" onClick={() => window.location.href = "price"}>
@@ -119,8 +119,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/pets.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Haustier</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Haustier</div>
                     </div>
                 </div>
                 <div className="children-button" onClick={() => window.location.href = "price"}>
@@ -131,8 +131,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/playtime.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Kinder</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Kinder</div>
                     </div>
                 </div>
                 <div className="leisure-button" onClick={() => window.location.href = "price"}>
@@ -143,8 +143,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/bowling.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Freizeigestaltung</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Freizeigestaltung</div>
                     </div>
                 </div>
                 <div className="courses-button" onClick={() => window.location.href = "price"}>
@@ -155,8 +155,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/mortarboard.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Kurse & Schulungen</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Kurse & Schulungen</div>
                     </div>
                 </div>
                 <div className="products-button" onClick={() => window.location.href = "price"}>
@@ -167,8 +167,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/product.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Produkte</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Produkte</div>
                     </div>
                 </div>
                 <div className="jobs-button" onClick={() => window.location.href = "price"}>
@@ -179,8 +179,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/suitcase.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Arbeitsstellen</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Arbeitsstellen</div>
                     </div>
                 </div>
                 <div className="apprenticeships-button" onClick={() => window.location.href = "price"}>
@@ -191,8 +191,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/recommendation.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Lehrstellen</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Lehrstellen</div>
                     </div>
                 </div>
                 <div className="consulting-button" onClick={() => window.location.href = "price"}>
@@ -203,8 +203,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/discussion.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Beratung</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Beratung</div>
                     </div>
                 </div>
                 <div className="diverses-button" onClick={() => window.location.href = "price"}>
@@ -215,8 +215,8 @@ const CategoriesComponent: FunctionComponent = () => {
                             src="/question-mark.png"
                         />
                     </div>
-                    <div className="category-label-wrapper">
-                        <div className="category-label">Diverses</div>
+                    <div className="card-label-wrapper">
+                        <div className="card-label">Diverses</div>
                     </div>
                 </div>
             </div>

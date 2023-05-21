@@ -1,23 +1,140 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap");
+
 body {
-  margin: 0;
-  line-height: normal;
-  background-color: #2b2b2b;
+    margin: 0;
+    line-height: normal;
+    background-color: #2b2b2b;
 }
+
 :root {
-  /* fonts */
-  --font-jost: Jost;
-  --font-work-sans: "Work Sans";
+    /* fonts */
+    --font-jost: Jost;
+    --font-work-sans: "Work Sans";
 
-  /* font sizes */
-  --font-size-base: 1rem;
+    /* font sizes */
+    --font-size-base: 1rem;
 
-  /* Colors */
-  --white: #fff;
-  --color-darkslategray: #3b3b3b;
-  --color-teal: #2e7167;
+    /* Colors */
+    --white: #fff;
+    --color-darkslategray: #3b3b3b;
+    --color-teal: #2e7167;
 
-  /* border radiuses */
-  --br-base: 16px;
+    /* border radiuses */
+    --br-base: 16px;
+}
+
+.page-container {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-size-base);
+    font-family: var(--font-work-sans);
+    color: var(--white);
+}
+
+.header {
+    display: inline;
+    position: relative;
+}
+
+.title {
+    position: relative;
+    top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+    font-family: var(--font-jost);
+}
+
+.back-icon-wrapper {
+    position: absolute;
+    top: 3.4rem;
+    left: 26rem;
+    width: 8rem;
+    height: 5.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--br-base);
+    background-color: var(--color-darkslategray);
+}
+
+.back-icon {
+    position: relative;
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+}
+
+.subtitle {
+    top: 8rem;
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    font-family: var(--font-jost);
+}
+
+.icon {
+    position: relative;
+    text-align: center;
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 75%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 25%;
+    left: 0;
+    border-radius: var(--br-base) var(--br-base) 0 0;
+    background-color: var(--color-teal);
+    overflow: hidden;
+}
+
+.card-label {
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+    display: inline-block;
+    width: 100%;
+}
+
+.card-label-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 25%;
+    width: 100%;
+    border-radius: 0 0 var(--br-base) var(--br-base);
+    background-color: var(--color-darkslategray);
+    overflow: hidden;
+}
+
+.content-line-1::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.frame-parent,
+.frame-parent-share {
+    grid-area: frame-parent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top: 10rem;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2.25rem;
+    color: white;
+    font-family: var(--font-jost);
 }

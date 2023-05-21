@@ -1,7 +1,7 @@
 import {FunctionComponent} from "react";
-import "./FindOrPlaceAdComponent.css";
+import "./ChooseAdTypeComponent.css";
 
-const FindOrPlaceAdComponent: FunctionComponent = () => {
+const ChooseAdTypeComponent: FunctionComponent = () => {
     let zipCode = "5210"
     let place = "Windisch"
     return (
@@ -21,7 +21,7 @@ const FindOrPlaceAdComponent: FunctionComponent = () => {
 
             <div className="grid-container-home">
                 <div className="offer-button" onClick={() => window.location.href = "categories"}>
-                    <div className="icon-wrapper-home">
+                    <div className="icon-wrapper">
                         <img
                             className="icon-home"
                             alt=""
@@ -29,11 +29,11 @@ const FindOrPlaceAdComponent: FunctionComponent = () => {
                         />
                     </div>
                     <div className="category-label-wrapper-home">
-                        <div className="category-label-home">Angebot</div>
+                        <div className="card-label-home">Angebot</div>
                     </div>
                 </div>
                 <div className="search-button" onClick={() => window.location.href = "categories"}>
-                    <div className="icon-wrapper-home">
+                    <div className="icon-wrapper">
                         <img
                             className="icon-home"
                             alt=""
@@ -41,7 +41,7 @@ const FindOrPlaceAdComponent: FunctionComponent = () => {
                         />
                     </div>
                     <div className="category-label-wrapper-home">
-                        <div className="category-label-home">Suche</div>
+                        <div className="card-label-home">Suche</div>
                     </div>
                 </div>
             </div>
@@ -50,4 +50,4 @@ const FindOrPlaceAdComponent: FunctionComponent = () => {
     );
 };
 
-export default FindOrPlaceAdComponent;
+export default ChooseAdTypeComponent;

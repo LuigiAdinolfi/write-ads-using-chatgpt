@@ -1,85 +1,15 @@
-.page-container {
-    /*background-color: #2b2b2b;*/
-    width: 100%;
-    /*overflow: scroll;*/
-    text-align: center;
-    font-size: var(--font-size-base);
-    color: var(--white);
-    font-family: var(--font-work-sans);
-
-}
-
-.header {
-    display: inline;
+.grid-container-output-select {
     position: relative;
-}
-
-.title {
-    position: relative;
-    top: 2rem;
-    text-align: center;
-    font-size: 4rem;
-    font-family: var(--font-jost);
-}
-
-.back-icon-wrapper {
-    position: absolute;
-    top: 3.4rem;
-    left: 26rem;
-    width: 8rem;
-    height: 5.6rem;
-    /*object-fit: cover;*/
-    display: flex;
+    top: 20rem;
+    display: grid;
     justify-content: center;
-    align-items: center;
-    border-radius: var(--br-base);
-    background-color: var(--color-darkslategray);
-}
-
-.back-icon {
-    position: relative;
-    text-align: center;
-    width: 4rem;
-    height: 4rem;
-    object-fit: cover;
-}
-
-.icon {
-    position: relative;
-    text-align: center;
-    width: 6rem;
-    height: 6rem;
-    object-fit: cover;
-}
-
-.icon-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 75%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 25%;
-    left: 0;
-    border-radius: var(--br-base) var(--br-base) 0 0;
-    background-color: var(--color-teal);
-    overflow: hidden;
-}
-
-.frame-parent {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    top: 10rem;
-    position: relative;
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-    font-size: 2.25rem;
-    color: white;
-    font-family: var(--font-jost);
+    grid-template-columns: repeat(2, 14rem);
+    grid-template-rows: repeat(1, 12rem);
+    grid-column-gap: 10rem;
+    grid-row-gap: 4rem;
+    grid-template-areas:
+    "icon-reject icon-confirm";
+    padding-bottom: 10rem;
 }
 
 .output-settings-parent {
@@ -97,20 +27,6 @@
     padding-left: 1.4rem;
     padding-right: 1.4rem;
     gap: 2.75rem;
-}
-
-.grid-container-output-select {
-    position: relative;
-    top: 20rem;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 14rem);
-    grid-template-rows: repeat(1, 12rem);
-    grid-column-gap: 10rem;
-    grid-row-gap: 4rem;
-    grid-template-areas:
-    "icon-reject icon-confirm";
-    padding-bottom: 10rem;
 }
 
 .frame-parent-text {
@@ -136,7 +52,6 @@
     border-radius: var(--br-base);
     background-color: #4F4F4F;
     width: 46rem;
-    /*height: 24rem;*/
     height: fit-content;
     overflow: hidden;
     flex-shrink: 0;

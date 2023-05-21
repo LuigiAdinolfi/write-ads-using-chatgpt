@@ -1,46 +1,15 @@
-.page-container {
-    width: 100%;
-    text-align: center;
-    font-size: var(--font-size-base);
-    color: var(--white);
-    font-family: var(--font-work-sans);
-
-}
-
-.header {
-    display: inline;
+.grid-container-home {
     position: relative;
-}
-
-.title {
-    position: relative;
-    top: 2rem;
-    text-align: center;
-    font-size: 4rem;
-    font-family: var(--font-jost);
-}
-
-.back-icon-wrapper {
-    position: absolute;
-    top: 3.4rem;
-    left: 26rem;
-    width: 8rem;
-    height: 5.6rem;
-    /*object-fit: cover;*/
-    display: flex;
+    top: 22rem;
+    display: grid;
     justify-content: center;
-    align-items: center;
-    border-radius: var(--br-base);
-    background-color: var(--color-darkslategray);
-    /*box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.25);*/
-}
-
-.back-icon {
-    position: relative;
-    text-align: center;
-    width: 4rem;
-    height: 4rem;
-    object-fit: cover;
+    grid-template-columns: repeat(2, 18rem);
+    grid-template-rows: repeat(1, 16rem);
+    grid-column-gap: 8rem;
+    grid-row-gap: 4rem;
+    grid-template-areas:
+    "offer-button search-button";
+    padding-bottom: 10rem;
 }
 
 .subtitle-home {
@@ -68,30 +37,6 @@
     border-radius: var(--br-base);
 }
 
-.grid-container-home {
-    position: relative;
-    top: 22rem;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 18rem);
-    grid-template-rows: repeat(1, 16rem);
-    grid-column-gap: 8rem;
-    grid-row-gap: 4rem;
-    grid-template-areas:
-    "offer-button search-button";
-    padding-bottom: 10rem;
-}
-
-/*.offer-button {*/
-/*    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.25);*/
-/*    border-radius: var(--br-base);*/
-/*}*/
-
-/*.search-button {*/
-/*    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.25);*/
-/*    border-radius: var(--br-base);*/
-/*}*/
-
 .icon-home {
     position: relative;
     text-align: center;
@@ -116,7 +61,7 @@
     overflow: hidden;
 }
 
-.category-label-home {
+.card-label-home {
     position: relative;
     line-height: 140%;
     font-weight: 600;
