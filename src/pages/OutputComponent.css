@@ -65,15 +65,16 @@
 }
 
 .refresh-icon-wrapper {
-    position: absolute;
-    top: 22rem;
-    left: 74rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 4rem;
+    margin-bottom: 4rem;
+    /*right: 86rem;*/
     width: 8rem;
     height: 5.6rem;
-    /*object-fit: cover;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: var(--br-base);
     background-color: var(--color-darkslategray);
 }
