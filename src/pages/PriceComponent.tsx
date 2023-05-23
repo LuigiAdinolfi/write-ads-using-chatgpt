@@ -1,12 +1,14 @@
 import React, {FunctionComponent} from "react";
 import "./PriceComponent.css";
+import {FullState} from "../State";
 
-const PriceComponent: FunctionComponent = () => {
+export function PriceComponent(props: { currentState: FullState }) {
     const [hours, setHours] = React.useState(0);
     const [moneyAmount, setMoneyAmount] = React.useState(0);
     const [showMoneySettings, setShowMoneySettings] = React.useState(false)
     const [showHourSettings, setShowHourSettings] = React.useState(false)
     const [showShareSettings, setShowShareSettings] = React.useState(false)
+    const [chosenPaymentMethod, setChosenPaymentMethod] = React.useState("");
 
     function incrementHours() {
         setHours(hours + 1);
@@ -43,21 +45,34 @@ const PriceComponent: FunctionComponent = () => {
     }
 
     function selectMoneySettings() {
+        setChosenPaymentMethod("money")
         setShowMoneySettings(true);
         setShowHourSettings(false);
         setShowShareSettings(false);
     }
 
     function selectHourSettings() {
+        setChosenPaymentMethod("time")
         setShowHourSettings(true);
         setShowMoneySettings(false);
         setShowShareSettings(false);
     }
 
     function selectShareSettings() {
+        setChosenPaymentMethod("share")
         setShowShareSettings(true);
         setShowHourSettings(false);
         setShowMoneySettings(false);
+    }
+
+    function selectPayMethod() {
+        if (chosenPaymentMethod === "money") {
+            props.currentState.paymentMethod = `${moneyAmount} Franken pro Stunde`;
+        } else if (chosenPaymentMethod === "time") {
+            props.currentState.paymentMethod = `${hours} Stunden auf dem Zeitkonto`;
+        } else if (chosenPaymentMethod === "share") {
+            props.currentState.paymentMethod = `Teilen gegen ${props.currentState.shareAgainst}`;
+        }
     }
 
     return (
@@ -137,7 +152,10 @@ const PriceComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button" onClick={() => window.location.href = "contact"}>
+                    <div className="confirm-button" onClick={() => {
+                        window.location.href = "contact"
+                        selectPayMethod()
+                    }}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -168,7 +186,10 @@ const PriceComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button" onClick={() => window.location.href = "contact"}>
+                    <div className="confirm-button" onClick={() => {
+                        window.location.href = "contact"
+                        selectPayMethod()
+                    }}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -180,7 +201,10 @@ const PriceComponent: FunctionComponent = () => {
                 </div>
             </div>}
 
-            {showShareSettings && <div className="shareSettings" onClick={() => window.location.href = "categories"}>
+            {showShareSettings && <div className="shareSettings" onClick={() => {
+                window.location.href = "categories"
+                selectPayMethod()
+            }}>
                 <div className="frame-parent-share">
                     <div className="shareSomething-settings-parent">
                         <div className="share">Kategorien</div>
@@ -190,6 +214,6 @@ const PriceComponent: FunctionComponent = () => {
             </div>}
         </div>
     );
-};
+}
 
 export default PriceComponent;

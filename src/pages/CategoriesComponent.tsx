@@ -1,7 +1,7 @@
-import {FunctionComponent} from "react";
 import "./CategoriesComponent.css";
+import {FullState} from "../State";
 
-const CategoriesComponent: FunctionComponent = () => {
+export function CategoriesComponent(props: { currentState: FullState }) {
     return (
         <div className="page-container">
             <div className="header">
@@ -16,7 +16,10 @@ const CategoriesComponent: FunctionComponent = () => {
             </div>
             <div className="subtitle">Kategorie auswählen</div>
             <div className="grid-container">
-                <div className="share-button" onClick={() => window.location.href = "price"}>
+                <div className="share-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Teilen";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -28,7 +31,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Teilen</div>
                     </div>
                 </div>
-                <div className="clean-button" onClick={() => window.location.href = "price"}>
+                <div className="clean-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Reinigungsarbeiten";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -40,7 +46,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Reinigungsarbeiten</div>
                     </div>
                 </div>
-                <div className="maintenance-button" onClick={() => window.location.href = "price"}>
+                <div className="maintenance-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Gebäudeunterhalt & Technik";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -57,7 +66,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="support-button" onClick={() => window.location.href = "price"}>
+                <div className="support-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Alltagsunterstützung";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -69,7 +81,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Alltagsunterstützung</div>
                     </div>
                 </div>
-                <div className="catering-button" onClick={() => window.location.href = "price"}>
+                <div className="catering-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Verpflegung";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -81,7 +96,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Verpflegung</div>
                     </div>
                 </div>
-                <div className="transport-button" onClick={() => window.location.href = "price"}>
+                <div className="transport-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Begleit- und Transportdienste";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -98,7 +116,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         </div>
                     </div>
                 </div>
-                <div className="admin-button" onClick={() => window.location.href = "price"}>
+                <div className="admin-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Administration";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -111,7 +132,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Administration</div>
                     </div>
                 </div>
-                <div className="pet-button" onClick={() => window.location.href = "price"}>
+                <div className="pet-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Haustier";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -123,7 +147,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Haustier</div>
                     </div>
                 </div>
-                <div className="children-button" onClick={() => window.location.href = "price"}>
+                <div className="children-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Kinder";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -135,7 +162,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Kinder</div>
                     </div>
                 </div>
-                <div className="leisure-button" onClick={() => window.location.href = "price"}>
+                <div className="leisure-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Freizeigestaltung";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -147,7 +177,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Freizeigestaltung</div>
                     </div>
                 </div>
-                <div className="courses-button" onClick={() => window.location.href = "price"}>
+                <div className="courses-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Kurse & Schulungen";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -159,7 +192,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Kurse & Schulungen</div>
                     </div>
                 </div>
-                <div className="products-button" onClick={() => window.location.href = "price"}>
+                <div className="products-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Produkte";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -171,7 +207,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Produkte</div>
                     </div>
                 </div>
-                <div className="jobs-button" onClick={() => window.location.href = "price"}>
+                <div className="jobs-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Arbeitsstellen";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -183,7 +222,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Arbeitsstellen</div>
                     </div>
                 </div>
-                <div className="apprenticeships-button" onClick={() => window.location.href = "price"}>
+                <div className="apprenticeships-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Lehrstellen";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -195,7 +237,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Lehrstellen</div>
                     </div>
                 </div>
-                <div className="consulting-button" onClick={() => window.location.href = "price"}>
+                <div className="consulting-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Beratung";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -207,7 +252,10 @@ const CategoriesComponent: FunctionComponent = () => {
                         <div className="card-label">Beratung</div>
                     </div>
                 </div>
-                <div className="diverses-button" onClick={() => window.location.href = "price"}>
+                <div className="diverses-button" onClick={() => {
+                    window.location.href = "price"
+                    props.currentState.category = "Diverses";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -222,6 +270,6 @@ const CategoriesComponent: FunctionComponent = () => {
             </div>
         </div>
     );
-};
+}
 
 export default CategoriesComponent;

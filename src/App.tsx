@@ -5,16 +5,19 @@ import {
     useLocation,
 } from "react-router-dom";
 import CategoriesComponent from "./pages/CategoriesComponent";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import ChooseAdTypeComponent from "./pages/ChooseAdTypeComponent";
 import PriceComponent from "./pages/PriceComponent";
 import ContactComponent from "./pages/ContactComponent";
 import OutputComponent from "./pages/OutputComponent";
+import {initialFullState} from "./State";
 
 function App() {
     const action = useNavigationType();
     const location = useLocation();
     const pathname = location.pathname;
+
+    const [globalState] = useState(initialFullState());
 
     useEffect(() => {
         if (action !== "POP") {
@@ -49,11 +52,11 @@ function App() {
 
     return (
         <Routes>
-            <Route path="/" element={<ChooseAdTypeComponent/>}/>
-            <Route path="/categories" element={<CategoriesComponent/>}/>
-            <Route path="/price" element={<PriceComponent/>}/>
-            <Route path="/contact" element={<ContactComponent/>}/>
-            <Route path="/output" element={<OutputComponent/>}/>
+            <Route path="/" element={<ChooseAdTypeComponent currentState={globalState}/>}/>
+            <Route path="/categories" element={<CategoriesComponent currentState={globalState}/>}/>
+            <Route path="/price" element={<PriceComponent currentState={globalState}/>}/>
+            <Route path="/contact" element={<ContactComponent currentState={globalState}/>}/>
+            <Route path="/output" element={<OutputComponent currentState={globalState}/>}/>
         </Routes>
     );
 }

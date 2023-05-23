@@ -1,13 +1,11 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import "./ContactComponent.css";
+import {FullState} from "../State";
 
-const ContactComponent: FunctionComponent = () => {
+export function ContactComponent(props: { currentState: FullState }) {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
     const [showPhoneSettings, setShowPhoneSettings] = React.useState(false)
     const [showFormSettings, setShowFormSettings] = React.useState(false)
-    let [email, setEmail] = React.useState("vorname.name@muster.com");
-    let [phone, setPhone] = React.useState("079 123 45 67");
-    let [form, setForm] = React.useState("Kontaktformular");
 
     function selectEmailSettings() {
         setShowEmailSettings(true);
@@ -25,6 +23,16 @@ const ContactComponent: FunctionComponent = () => {
         setShowFormSettings(true);
         setShowEmailSettings(false);
         setShowPhoneSettings(false);
+    }
+
+    function selectContactMethod() {
+        if (showEmailSettings) {
+            props.currentState.contactMethod = `E-Mail: ${props.currentState.email}`
+        } else if (showPhoneSettings) {
+            props.currentState.contactMethod = `Telefon: ${props.currentState.phone}`
+        } else if (showFormSettings) {
+            props.currentState.contactMethod = `${props.currentState.form}`
+        }
     }
 
     return (
@@ -88,7 +96,7 @@ const ContactComponent: FunctionComponent = () => {
             {showEmailSettings && <div className="emailSettings">
                 <div className="frame-parent">
                     <div className="email-settings-parent">
-                        <div className="email">{email}</div>
+                        <div className="email">{props.currentState.email}</div>
                     </div>
                 </div>
 
@@ -102,7 +110,12 @@ const ContactComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button" onClick={() => window.location.href = "output"}>
+                    <div className="confirm-button" onClick={() => {
+                        window.location.href = "output"
+                        selectContactMethod()
+                        //TODO
+                        // sendToChatGPT()
+                    }}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -117,7 +130,7 @@ const ContactComponent: FunctionComponent = () => {
             {showPhoneSettings && <div className="phoneSettings">
                 <div className="frame-parent">
                     <div className="phone-settings-parent">
-                        <div className="phone">{phone}</div>
+                        <div className="phone">{props.currentState.phone}</div>
                     </div>
                 </div>
                 <div className="grid-container-contact-select">
@@ -130,7 +143,12 @@ const ContactComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button" onClick={() => window.location.href = "output"}>
+                    <div className="confirm-button" onClick={() => {
+                        window.location.href = "output"
+                        selectContactMethod()
+                        //TODO
+                        // sendToChatGPT()
+                    }}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -145,7 +163,7 @@ const ContactComponent: FunctionComponent = () => {
             {showFormSettings && <div className="formSettings">
                 <div className="frame-parent">
                     <div className="form-settings-parent">
-                        <div className="form">{form}</div>
+                        <div className="form">{props.currentState.form}</div>
                     </div>
                 </div>
                 <div className="grid-container-contact-select">
@@ -158,7 +176,12 @@ const ContactComponent: FunctionComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button" onClick={() => window.location.href = "output"}>
+                    <div className="confirm-button" onClick={() => {
+                        window.location.href = "output"
+                        selectContactMethod()
+                        //TODO
+                        // sendToChatGPT()
+                    }}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -171,6 +194,6 @@ const ContactComponent: FunctionComponent = () => {
             </div>}
         </div>
     );
-};
+}
 
 export default ContactComponent;

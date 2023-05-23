@@ -1,9 +1,9 @@
-import {FunctionComponent} from "react";
 import "./ChooseAdTypeComponent.css";
+import {FullState} from "../State";
 
-const ChooseAdTypeComponent: FunctionComponent = () => {
-    let zipCode = "5210"
-    let place = "Windisch"
+export function ChooseAdTypeComponent (props: { currentState: FullState }) {
+    // let zipCode = "5210"
+    // let place = "Windisch"
     return (
         <div className="page-container">
             <div className="header">
@@ -17,10 +17,13 @@ const ChooseAdTypeComponent: FunctionComponent = () => {
                 </div>
             </div>
             <div className="subtitle-home">Ort</div>
-            <div className="place">{`${zipCode} ${place}`}</div>
+            <div className="place">{`${props.currentState.zipCode} ${props.currentState.place}`}</div>
 
             <div className="grid-container-home">
-                <div className="offer-button" onClick={() => window.location.href = "categories"}>
+                <div className="offer-button" onClick={() => {
+                    window.location.href = "categories"
+                    props.currentState.adType = "Ich biete";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon-home"
@@ -32,7 +35,10 @@ const ChooseAdTypeComponent: FunctionComponent = () => {
                         <div className="card-label-home">Angebot</div>
                     </div>
                 </div>
-                <div className="search-button" onClick={() => window.location.href = "categories"}>
+                <div className="search-button" onClick={() => {
+                    window.location.href = "categories"
+                    props.currentState.adType = "Ich suche";
+                }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon-home"
@@ -48,6 +54,6 @@ const ChooseAdTypeComponent: FunctionComponent = () => {
 
         </div>
     );
-};
+}
 
 export default ChooseAdTypeComponent;

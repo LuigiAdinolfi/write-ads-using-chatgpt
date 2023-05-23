@@ -53,6 +53,7 @@
     background-color: #4F4F4F;
     width: 46rem;
     height: fit-content;
+    min-height: 6rem;
     overflow: hidden;
     flex-shrink: 0;
     flex-direction: row;

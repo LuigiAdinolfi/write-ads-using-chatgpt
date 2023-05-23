@@ -1,7 +1,8 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import "./OutputComponent.css";
+import {FullState} from "../State";
 
-const OutputComponent: FunctionComponent = () => {
+export function OutputComponent (props: { currentState: FullState }) {
 
     const [text, setText] = React.useState("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.");
 
@@ -56,6 +57,6 @@ const OutputComponent: FunctionComponent = () => {
             </div>
         </div>
     );
-};
+}
 
 export default OutputComponent;
