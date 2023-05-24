@@ -3,8 +3,8 @@
     top: 14rem;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 14rem);
-    grid-template-rows: repeat(1, 12rem);
+    grid-template-columns: repeat(3, 18rem);
+    grid-template-rows: repeat(1, 16rem);
     grid-column-gap: 8rem;
     grid-row-gap: 4rem;
     grid-template-areas:
@@ -21,13 +21,13 @@
 .money-settings-parent {
     border-radius: var(--br-base);
     background-color: #4F4F4F;
-    width: 32rem;
-    height: 6rem;
+    width: 38rem;
+    height: 7rem;
     overflow: hidden;
     flex-shrink: 0;
     flex-direction: row;
-    padding-left: 1.4rem;
-    padding-right: 1.4rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
     justify-content: space-between;
     gap: 2.75rem;
 }
@@ -35,13 +35,13 @@
 .shareSomething-settings-parent {
     border-radius: var(--br-base);
     background-color: #4F4F4F;
-    width: 32rem;
-    height: 6rem;
+    width: 38rem;
+    height: 7rem;
     overflow: hidden;
     flex-shrink: 0;
     flex-direction: row;
-    padding-left: 1.4rem;
-    padding-right: 1.4rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
     justify-content: center;
     gap: 2.75rem;
 }
@@ -52,7 +52,7 @@
 }
 
 .plus-icon-share {
-    padding-left: 24rem;
+    padding-left: 34rem;
     width: 3.75rem;
     height: 3.75rem;
     object-fit: cover;
@@ -81,11 +81,11 @@
 
 .grid-container-price-select {
     position: relative;
-    top: 20rem;
+    top: 24rem;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, 14rem);
-    grid-template-rows: repeat(1, 12rem);
+    grid-template-columns: repeat(2, 16rem);
+    grid-template-rows: repeat(1, 14rem);
     grid-column-gap: 10rem;
     grid-row-gap: 4rem;
     grid-template-areas:

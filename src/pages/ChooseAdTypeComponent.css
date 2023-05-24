@@ -1,6 +1,6 @@
 .grid-container-home {
     position: relative;
-    top: 22rem;
+    top: 28rem;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 18rem);
@@ -13,12 +13,14 @@
 }
 
 .subtitle-home {
-    top: 9rem;
+    top: 13rem;
     position: relative;
     text-align: center;
     right: 18rem;
     font-size: 3rem;
     font-family: var(--font-jost);
+    color: darkgray;
+    opacity: 0.3;
 }
 
 .place {
@@ -27,7 +29,7 @@
     align-items: center;
     width: 700px;
     padding-left: 2rem;
-    top: 10rem;
+    top: 14rem;
     position: relative;
     text-align: center;
     font-size: 3rem;
@@ -35,6 +37,7 @@
     color: darkgray;
     background: #4F4F4F;
     border-radius: var(--br-base);
+    opacity: 0.3;
 }
 
 .icon-home {

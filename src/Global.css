@@ -30,6 +30,7 @@ body {
     font-size: var(--font-size-base);
     font-family: var(--font-work-sans);
     color: var(--white);
+    margin-top: 40rem;
 
     /*center content*/
     /*height: 100vh;*/
@@ -55,7 +56,7 @@ body {
 .back-icon-wrapper {
     position: absolute;
     top: 3.4rem;
-    left: 26rem;
+    left: 37rem;
     width: 8rem;
     height: 5.6rem;
     display: flex;
@@ -111,6 +112,7 @@ body {
     font-weight: 600;
     display: inline-block;
     width: 100%;
+    font-size: 1.4rem;
 }
 
 .card-label-wrapper {
@@ -125,6 +127,15 @@ body {
     overflow: hidden;
 }
 
+.category-name1 {
+    position: relative;
+    line-height: 114%;
+    font-weight: 600;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
 .content-line-1::after {
     content: "\a";
     white-space: pre;
@@ -136,7 +147,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    top: 10rem;
+    top: 12rem;
     position: relative;
     width: 100%;
     flex-direction: column;

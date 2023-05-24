@@ -3,10 +3,10 @@
     top: 14rem;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, 14rem);
-    grid-template-rows: repeat(4, 12rem);
-    grid-column-gap: 4rem;
-    grid-row-gap: 4rem;
+    grid-template-columns: repeat(4, 18rem);
+    grid-template-rows: repeat(4, 16rem);
+    grid-column-gap: 6rem;
+    grid-row-gap: 6rem;
     grid-template-areas:
     "share-button clean-button maintenance-button support-button"
     "catering-button transport-button admin-button pet-button"
