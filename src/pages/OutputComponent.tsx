@@ -1,6 +1,5 @@
 import React from "react";
 import "./OutputComponent.css";
-import {FullState} from "../State";
 
 export function OutputComponent () {
 
