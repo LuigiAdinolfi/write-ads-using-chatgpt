@@ -2,6 +2,8 @@ image: node
 
 build:
   stage: build
+  variables:
+    PUBLIC_URL: https://iit-projektschiene.pages.fhnw.ch/FS23/ip5_inserate-one11/
   cache:
     paths:
       - node_modules/
@@ -23,5 +25,3 @@ pages:
   artifacts:
     paths:
       - public
-  only:
-    - master
