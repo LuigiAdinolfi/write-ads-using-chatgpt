@@ -2,9 +2,9 @@ import React from "react";
 import "./OutputComponent.css";
 import {FullState} from "../State";
 
-export function OutputComponent (props: { currentState: FullState }) {
+export function OutputComponent () {
 
-    const [text, setText] = React.useState("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.");
+    const [text] = React.useState("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.");
 
     return (
         <div className="page-container">
