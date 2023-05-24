@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import "./PriceComponent.css";
 import {FullState} from "../State";
 
@@ -75,12 +75,6 @@ export function PriceComponent(props: { currentState: FullState }) {
         setShowingSharingButton(true)
         setShowingMoneyButton(false)
         setShowingTimeButton(false)
-    }
-
-    function resetButtonsOpacity() {
-        setShowingSharingButton(true)
-        setShowingMoneyButton(true)
-        setShowingTimeButton(true)
     }
 
     function selectPayMethod() {
@@ -203,7 +197,6 @@ export function PriceComponent(props: { currentState: FullState }) {
                 <div className="grid-container-price-select">
                     <div className="reject-button" onClick={() => {
                         window.location.href = "price"
-                        resetButtonsOpacity()
                     }}>
                         <div className="icon-wrapper-reject">
                             <img
@@ -216,7 +209,6 @@ export function PriceComponent(props: { currentState: FullState }) {
                     <div className="confirm-button" onClick={() => {
                         window.location.href = "contact"
                         selectPayMethod()
-                        resetButtonsOpacity()
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img
@@ -232,7 +224,6 @@ export function PriceComponent(props: { currentState: FullState }) {
             {showShareSettings && <div className="shareSettings" onClick={() => {
                 window.location.href = "categories"
                 selectPayMethod()
-                resetButtonsOpacity()
             }}>
                 <div className="frame-parent-share">
                     <div className="shareSomething-settings-parent">

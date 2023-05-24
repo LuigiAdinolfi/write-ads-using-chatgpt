@@ -6,23 +6,35 @@ export function ContactComponent(props: { currentState: FullState }) {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
     const [showPhoneSettings, setShowPhoneSettings] = React.useState(false)
     const [showFormSettings, setShowFormSettings] = React.useState(false)
+    const [showingEmailButton, setShowingEmailButton] = React.useState(true)
+    const [showingPhoneButton, setShowingPhoneButton] = React.useState(true)
+    const [showingFormButton, setShowingFormButton] = React.useState(true)
 
     function selectEmailSettings() {
         setShowEmailSettings(true);
         setShowPhoneSettings(false);
         setShowFormSettings(false);
+        setShowingEmailButton(true)
+        setShowingPhoneButton(false)
+        setShowingFormButton(false)
     }
 
     function selectPhoneSettings() {
         setShowPhoneSettings(true);
         setShowEmailSettings(false);
         setShowFormSettings(false);
+        setShowingEmailButton(false)
+        setShowingPhoneButton(true)
+        setShowingFormButton(false)
     }
 
     function selectFormSettings() {
         setShowFormSettings(true);
         setShowEmailSettings(false);
         setShowPhoneSettings(false);
+        setShowingEmailButton(false)
+        setShowingPhoneButton(false)
+        setShowingFormButton(true)
     }
 
     function selectContactMethod() {
@@ -49,9 +61,11 @@ export function ContactComponent(props: { currentState: FullState }) {
             </div>
             <div className="subtitle">Kontaktmöglichkeit</div>
             <div className="grid-container-contact">
-                <div className="email-button" onClick={() => {
-                    selectEmailSettings()
-                }}>
+                <div className="email-button"
+                     style={{opacity: showingEmailButton ? 1.0 : 0.3}}
+                     onClick={() => {
+                         selectEmailSettings()
+                     }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -63,9 +77,11 @@ export function ContactComponent(props: { currentState: FullState }) {
                         <div className="card-label">E-Mail</div>
                     </div>
                 </div>
-                <div className="phone-button" onClick={() => {
-                    selectPhoneSettings()
-                }}>
+                <div className="phone-button"
+                     style={{opacity: showingPhoneButton ? 1.0 : 0.3}}
+                     onClick={() => {
+                         selectPhoneSettings()
+                     }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -77,9 +93,11 @@ export function ContactComponent(props: { currentState: FullState }) {
                         <div className="card-label">Telefon</div>
                     </div>
                 </div>
-                <div className="form-button" onClick={() => {
-                    selectFormSettings()
-                }}>
+                <div className="form-button"
+                     style={{opacity: showingFormButton ? 1.0 : 0.3}}
+                     onClick={() => {
+                         selectFormSettings()
+                     }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
