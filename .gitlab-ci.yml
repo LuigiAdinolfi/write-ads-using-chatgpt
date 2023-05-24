@@ -1,29 +1,30 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
 stages:
   - build
   - deploy
 
+before_script:
+  - npm ci
+
 build:
-  image: node:latest
   stage: build
-  variables:
-    # Replace this with your site URL
-    PUBLIC_URL: https://iit-projektschiene.pages.fhnw.ch/FS23/ip5_inserate-one11/
   script:
-    - yarn install
-    - yarn build
+    - npm run build
   artifacts:
     paths:
       - build/
 
 pages:
-  image: alpine:latest
   stage: deploy
-  variables:
-    GIT_STRATEGY: none        # Do not clone git repo
   script:
-    # Rename the CRA `build` folder to `public`
     - mv build public
-    - cp public/index.html public/404.html
   artifacts:
     paths:
       - public
+  only:
+    - master
