@@ -1,27 +1,30 @@
-image: node
+# Stages run sequentially, so we add a new `deploy` stage
+# after the `build` one
+stages:
+  - build
+  - deploy
 
 build:
+  image: node:latest
   stage: build
-  cache:
-    paths:
-      - node_modules/
+  variables:
+    # Replace this with your site URL
+    PUBLIC_URL: https://iit-projektschiene.pages.fhnw.ch/FS23/
   script:
     - npm install
-    - npm run build
+    - npm build
   artifacts:
     paths:
-      - build
+      - build/
 
 pages:
+  image: alpine:latest
   stage: deploy
-  dependencies:
-    - build
+  variables:
+    GIT_STRATEGY: none        # Do not clone git repo
   script:
-    - rm -rf public
-    - cp build/index.html build/404.html
+    # Rename the CRA `build` folder to `public`
     - mv build public
   artifacts:
     paths:
       - public
-  only:
-    - master
