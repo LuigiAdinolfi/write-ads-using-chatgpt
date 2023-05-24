@@ -9,6 +9,9 @@ export function PriceComponent(props: { currentState: FullState }) {
     const [showHourSettings, setShowHourSettings] = React.useState(false)
     const [showShareSettings, setShowShareSettings] = React.useState(false)
     const [chosenPaymentMethod, setChosenPaymentMethod] = React.useState("");
+    const [showingMoneyButton, setShowingMoneyButton] = React.useState(true)
+    const [showingTimeButton, setShowingTimeButton] = React.useState(true)
+    const [showingSharingButton, setShowingSharingButton] = React.useState(true)
 
     function incrementHours() {
         setHours(hours + 1);
@@ -49,6 +52,9 @@ export function PriceComponent(props: { currentState: FullState }) {
         setShowMoneySettings(true);
         setShowHourSettings(false);
         setShowShareSettings(false);
+        setShowingMoneyButton(true)
+        setShowingSharingButton(false)
+        setShowingTimeButton(false)
     }
 
     function selectHourSettings() {
@@ -56,6 +62,9 @@ export function PriceComponent(props: { currentState: FullState }) {
         setShowHourSettings(true);
         setShowMoneySettings(false);
         setShowShareSettings(false);
+        setShowingTimeButton(true)
+        setShowingSharingButton(false)
+        setShowingMoneyButton(false)
     }
 
     function selectShareSettings() {
@@ -63,6 +72,15 @@ export function PriceComponent(props: { currentState: FullState }) {
         setShowShareSettings(true);
         setShowHourSettings(false);
         setShowMoneySettings(false);
+        setShowingSharingButton(true)
+        setShowingMoneyButton(false)
+        setShowingTimeButton(false)
+    }
+
+    function resetButtonsOpacity() {
+        setShowingSharingButton(true)
+        setShowingMoneyButton(true)
+        setShowingTimeButton(true)
     }
 
     function selectPayMethod() {
@@ -89,9 +107,11 @@ export function PriceComponent(props: { currentState: FullState }) {
             </div>
             <div className="subtitle">Preis</div>
             <div className="grid-container-price">
-                <div className="money-button" onClick={() => {
-                    selectMoneySettings()
-                }}>
+                <div className="money-button"
+                     style={{opacity: showingMoneyButton ? 1.0 : 0.3}}
+                     onClick={() => {
+                         selectMoneySettings()
+                     }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -103,9 +123,11 @@ export function PriceComponent(props: { currentState: FullState }) {
                         <div className="card-label">Geld</div>
                     </div>
                 </div>
-                <div className="time-button" onClick={() => {
-                    selectHourSettings()
-                }}>
+                <div className="time-button"
+                     style={{opacity: showingTimeButton ? 1.0 : 0.3}}
+                     onClick={() => {
+                         selectHourSettings()
+                     }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -117,9 +139,11 @@ export function PriceComponent(props: { currentState: FullState }) {
                         <div className="card-label">Zeit</div>
                     </div>
                 </div>
-                <div className="shareSomething-button" onClick={() => {
-                    selectShareSettings()
-                }}>
+                <div className="shareSomething-button"
+                     style={{opacity: showingSharingButton ? 1.0 : 0.3}}
+                     onClick={() => {
+                         selectShareSettings()
+                     }}>
                     <div className="icon-wrapper">
                         <img
                             className="icon"
@@ -177,7 +201,10 @@ export function PriceComponent(props: { currentState: FullState }) {
                 </div>
 
                 <div className="grid-container-price-select">
-                    <div className="reject-button" onClick={() => window.location.href = "price"}>
+                    <div className="reject-button" onClick={() => {
+                        window.location.href = "price"
+                        resetButtonsOpacity()
+                    }}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -189,6 +216,7 @@ export function PriceComponent(props: { currentState: FullState }) {
                     <div className="confirm-button" onClick={() => {
                         window.location.href = "contact"
                         selectPayMethod()
+                        resetButtonsOpacity()
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img
@@ -204,6 +232,7 @@ export function PriceComponent(props: { currentState: FullState }) {
             {showShareSettings && <div className="shareSettings" onClick={() => {
                 window.location.href = "categories"
                 selectPayMethod()
+                resetButtonsOpacity()
             }}>
                 <div className="frame-parent-share">
                     <div className="shareSomething-settings-parent">
