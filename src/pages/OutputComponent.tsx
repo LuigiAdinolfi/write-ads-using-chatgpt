@@ -1,9 +1,45 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./OutputComponent.css";
+import {FullState} from "../State";
 
-export function OutputComponent () {
+export function OutputComponent(props: { currentState: FullState }) {
 
-    const [text] = React.useState("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.");
+    let [textRequest] = React.useState(`Schreiben Sie mir ein Inserat unterteilt in 
+    'Titel' und 'Beschreibung' mit folgenden Stichworten: Was: ${props.currentState.adType}, 
+    Kategorie: ${props.currentState.category}, Bezahlung: ${props.currentState.paymentMethod}, 
+    Kontakt: ${props.currentState.contactMethod}`);
+
+    const [message, setMessage] = useState(null)
+    const getOutput = async () => {
+        console.log(textRequest)
+        const options = {
+            method: "POST",
+            body: JSON.stringify({
+                message: textRequest,
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        try {
+            const response = await fetch('http://localhost:8000/completions', options)
+            const data = await response.json()
+            console.log(data)
+            setMessage(data.choices[0].message.content)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    function setOutput() {
+        if (message != null) {
+            props.currentState.output = message;
+        }
+    }
+
+    useEffect(() => {
+        getOutput().then(r => setOutput());
+    }, []);
 
     return (
         <div className="page-container">
@@ -19,10 +55,13 @@ export function OutputComponent () {
             </div>
             <div className="frame-parent-text">
                 <div className="text-settings-parent">
-                    <div className="text">{text}</div>
+                    <div className="text">{message}</div>
                 </div>
             </div>
-            <div className="refresh-icon-wrapper" onClick={() => window.location.href = "output"}>
+            <div className="refresh-icon-wrapper" onClick={
+                // getOutput
+                () => window.location.href = "output"
+            }>
                 <img
                     className="refresh-icon"
                     alt=""
@@ -44,7 +83,12 @@ export function OutputComponent () {
                         />
                     </div>
                 </div>
-                <div className="confirm-button" onClick={() => window.location.href = "/"}>
+
+                <div className="confirm-button" onClick={
+                    () => {
+                        window.location.href = "/"
+                    }
+                }>
                     <div className="icon-wrapper-confirm">
                         <img
                             className="icon-confirm"

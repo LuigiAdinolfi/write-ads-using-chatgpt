@@ -56,7 +56,7 @@ function App() {
             <Route path="/categories" element={<CategoriesComponent currentState={globalState}/>}/>
             <Route path="/price" element={<PriceComponent currentState={globalState}/>}/>
             <Route path="/contact" element={<ContactComponent currentState={globalState}/>}/>
-            <Route path="/output" element={<OutputComponent/>}/>
+            <Route path="/output" element={<OutputComponent currentState={globalState}/>}/>
         </Routes>
     );
 }
