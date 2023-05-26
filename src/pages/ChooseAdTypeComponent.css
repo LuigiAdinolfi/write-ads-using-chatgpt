@@ -1,11 +1,11 @@
 .grid-container-home {
     position: relative;
-    top: 28rem;
+    top: 42rem;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, 18rem);
-    grid-template-rows: repeat(1, 16rem);
-    grid-column-gap: 8rem;
+    grid-template-columns: repeat(2, 22rem);
+    grid-template-rows: repeat(1, 20rem);
+    grid-column-gap: 14rem;
     grid-row-gap: 4rem;
     grid-template-areas:
     "offer-button search-button";
@@ -13,26 +13,26 @@
 }
 
 .subtitle-home {
-    top: 13rem;
+    top: 23rem;
     position: relative;
     text-align: center;
-    right: 18rem;
-    font-size: 3rem;
+    right: 26rem;
+    font-size: 3.4rem;
     font-family: var(--font-jost);
     color: darkgray;
     opacity: 0.3;
 }
 
 .place {
-    height: 6rem;
+    height: 8rem;
     display: inline-flex;
     align-items: center;
-    width: 700px;
+    width: 910px;
     padding-left: 2rem;
-    top: 14rem;
+    top: 24rem;
     position: relative;
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.4rem;
     font-family: var(--font-jost);
     color: darkgray;
     background: #4F4F4F;
@@ -68,7 +68,7 @@
     position: relative;
     line-height: 140%;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     display: inline-block;
     width: 100%;
 }

@@ -28,7 +28,7 @@ export function OutputComponent() {
         navigate('/', {replace: true});
     }
 
-    useEffect(() => {
+    function getAdText() {
         const getOutput = async () => {
             console.log(textRequest)
             const options = {
@@ -50,6 +50,10 @@ export function OutputComponent() {
             }
         }
         getOutput();
+    }
+
+    useEffect(() => {
+        getAdText()
     }, []);
 
     useEffect(() => {
@@ -77,7 +81,7 @@ export function OutputComponent() {
                 </div>
             </div>
             <div className="refresh-icon-wrapper" onClick={() => {
-                // getOutput();
+                getAdText()
                 stayOnThePage()
             }}>
                 <img
