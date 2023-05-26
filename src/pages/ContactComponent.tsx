@@ -150,8 +150,6 @@ export function ContactComponent() {
                          onClick={() => {
                              selectContactMethod()
                              goAheadInTheRoute()
-                             //TODO
-                             // sendToChatGPT()
                          }}>
                         <div className="icon-wrapper-confirm">
                             <img
