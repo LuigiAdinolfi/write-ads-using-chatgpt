@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import "./ContactComponent.css";
-import {FullState} from "../State";
 import {StateContext} from "../StateContext";
+import {useNavigate} from "react-router-dom";
 
 export function ContactComponent() {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
@@ -12,6 +12,19 @@ export function ContactComponent() {
     const [showingFormButton, setShowingFormButton] = React.useState(true)
 
     const {currentState, setCurrentState} = useContext(StateContext);
+
+    let navigate = useNavigate();
+
+    const goBackInTheRoute = () => {
+        navigate('/price', {replace: true});
+    }
+
+    const stayOnThePage = () => {
+        navigate('/contact', {replace: true});
+    }
+    const goAheadInTheRoute = () => {
+        navigate('/output', {replace: true});
+    }
 
     function selectEmailSettings() {
         setShowEmailSettings(true);
@@ -54,7 +67,8 @@ export function ContactComponent() {
         <div className="page-container">
             <div className="header">
                 <div className="title">Marktplatz</div>
-                <div className="back-icon-wrapper" onClick={() => window.location.href = "price"}>
+                <div className="back-icon-wrapper"
+                     onClick={() => goBackInTheRoute()}>
                     <img
                         className="back-icon"
                         alt=""
@@ -122,7 +136,8 @@ export function ContactComponent() {
                 </div>
 
                 <div className="grid-container-contact-select">
-                    <div className="reject-button" onClick={() => window.location.href = "contact"}>
+                    <div className="reject-button"
+                         onClick={() => stayOnThePage()}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -131,9 +146,10 @@ export function ContactComponent() {
                             />
                         </div>
                     </div>
-                    <div className="confirm-button" onClick={() => {
-                        window.location.href = "output"
-                        selectContactMethod()
+                    <div className="confirm-button"
+                         onClick={() => {
+                             selectContactMethod()
+                             goAheadInTheRoute()
                         //TODO
                         // sendToChatGPT()
                     }}>
@@ -155,7 +171,8 @@ export function ContactComponent() {
                     </div>
                 </div>
                 <div className="grid-container-contact-select">
-                    <div className="reject-button" onClick={() => window.location.href = "contact"}>
+                    <div className="reject-button"
+                         onClick={() => stayOnThePage()}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -165,8 +182,8 @@ export function ContactComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        window.location.href = "output"
                         selectContactMethod()
+                        goAheadInTheRoute()
                         //TODO
                         // sendToChatGPT()
                     }}>
@@ -188,7 +205,8 @@ export function ContactComponent() {
                     </div>
                 </div>
                 <div className="grid-container-contact-select">
-                    <div className="reject-button" onClick={() => window.location.href = "contact"}>
+                    <div className="reject-button"
+                         onClick={() => stayOnThePage()}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -198,8 +216,8 @@ export function ContactComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        window.location.href = "output"
                         selectContactMethod()
+                        goAheadInTheRoute()
                         //TODO
                         // sendToChatGPT()
                     }}>

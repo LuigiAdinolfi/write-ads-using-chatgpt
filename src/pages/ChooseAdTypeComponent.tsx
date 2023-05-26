@@ -1,13 +1,25 @@
 import "./ChooseAdTypeComponent.css";
-import {FullState} from "../State";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import {StateContext} from "../StateContext";
+import {useNavigate} from "react-router-dom";
 
 export function ChooseAdTypeComponent () {
     // let zipCode = "5210"
     // let place = "Windisch"
 
     const {currentState, setCurrentState} = useContext(StateContext);
+
+    // useEffect(() => {
+    //     console.log(currentState.zipCode)
+    //     console.log(currentState.place)
+    //     console.log(currentState.adType)
+    // }, [currentState.adType]);
+
+    let navigate = useNavigate();
+
+    const goAheadInTheRoute = () =>{
+        navigate('/categories', {replace: true});
+    }
 
     return (
         <div className="page-container">
@@ -27,7 +39,8 @@ export function ChooseAdTypeComponent () {
             <div className="grid-container-home">
                 <div className="offer-button" onClick={() => {
                     setCurrentState({...currentState, adType: "Ich biete"});
-                    window.location.href = "categories"
+                    goAheadInTheRoute();
+                    // window.location.href = "categories"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -42,7 +55,8 @@ export function ChooseAdTypeComponent () {
                 </div>
                 <div className="search-button" onClick={() => {
                     setCurrentState({...currentState, adType: "Ich suche"});
-                    window.location.href = "categories"
+                    goAheadInTheRoute();
+                    // window.location.href = "categories"
                 }}>
                     <div className="icon-wrapper">
                         <img

@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import "./OutputComponent.css";
 import {StateContext} from "../StateContext";
+import {useNavigate} from "react-router-dom";
 
 export function OutputComponent() {
 
@@ -12,6 +13,19 @@ export function OutputComponent() {
     Kontakt: ${currentState.contactMethod}`);
 
     const [message, setMessage] = useState(null)
+
+    let navigate = useNavigate();
+
+    const goBackInTheRoute = () => {
+        navigate('/contact', {replace: true});
+    }
+
+    const stayOnThePage = () => {
+        navigate('/output', {replace: true});
+    }
+    const goAheadInTheRoute = () => {
+        navigate('/', {replace: true});
+    }
 
 
     useEffect(() => {
@@ -48,7 +62,8 @@ export function OutputComponent() {
         <div className="page-container">
             <div className="header">
                 <div className="title">Marktplatz</div>
-                <div className="back-icon-wrapper" onClick={() => window.location.href = "contact"}>
+                <div className="back-icon-wrapper"
+                     onClick={() => goBackInTheRoute()}>
                     <img
                         className="back-icon"
                         alt=""
@@ -63,7 +78,7 @@ export function OutputComponent() {
             </div>
             <div className="refresh-icon-wrapper" onClick={
                 // getOutput
-                () => window.location.href = "output"
+                () => stayOnThePage()
             }>
                 <img
                     className="refresh-icon"
@@ -77,7 +92,8 @@ export function OutputComponent() {
                 </div>
             </div>
             <div className="grid-container-output-select">
-                <div className="reject-button" onClick={() => window.location.href = "output"}>
+                <div className="reject-button"
+                     onClick={() => stayOnThePage()}>
                     <div className="icon-wrapper-reject">
                         <img
                             className="icon-reject"
@@ -89,7 +105,7 @@ export function OutputComponent() {
 
                 <div className="confirm-button" onClick={
                     () => {
-                        window.location.href = "/"
+                        goAheadInTheRoute();
                     }
                 }>
                     <div className="icon-wrapper-confirm">

@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import "./PriceComponent.css";
-import {FullState} from "../State";
 import {StateContext} from "../StateContext";
+import {useNavigate} from "react-router-dom";
 
 export function PriceComponent() {
     const [hours, setHours] = React.useState(0);
@@ -15,6 +15,19 @@ export function PriceComponent() {
     const [showingSharingButton, setShowingSharingButton] = React.useState(true)
 
     const {currentState, setCurrentState} = useContext(StateContext);
+
+    let navigate = useNavigate();
+
+    const goBackInTheRoute = () => {
+        navigate('/categories', {replace: true});
+    }
+
+    const stayOnThePage = () => {
+        navigate('/price', {replace: true});
+    }
+    const goAheadInTheRoute = () => {
+        navigate('/contact', {replace: true});
+    }
 
     function incrementHours() {
         setHours(hours + 1);
@@ -103,7 +116,8 @@ export function PriceComponent() {
         <div className="page-container">
             <div className="header">
                 <div className="title">Marktplatz</div>
-                <div className="back-icon-wrapper" onClick={() => window.location.href = "categories"}>
+                <div className="back-icon-wrapper"
+                     onClick={() => goBackInTheRoute()}>
                     <img
                         className="back-icon"
                         alt=""
@@ -173,7 +187,8 @@ export function PriceComponent() {
                 </div>
 
                 <div className="grid-container-price-select">
-                    <div className="reject-button" onClick={() => window.location.href = "price"}>
+                    <div className="reject-button"
+                         onClick={() => stayOnThePage()}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -183,7 +198,7 @@ export function PriceComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        window.location.href = "contact"
+                        goAheadInTheRoute()
                         selectPayMethod()
                     }}>
                         <div className="icon-wrapper-confirm">
@@ -208,7 +223,7 @@ export function PriceComponent() {
 
                 <div className="grid-container-price-select">
                     <div className="reject-button" onClick={() => {
-                        window.location.href = "price"
+                        stayOnThePage()
                     }}>
                         <div className="icon-wrapper-reject">
                             <img
@@ -219,7 +234,7 @@ export function PriceComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        window.location.href = "contact"
+                        goAheadInTheRoute()
                         selectPayMethod()
                     }}>
                         <div className="icon-wrapper-confirm">
@@ -234,7 +249,7 @@ export function PriceComponent() {
             </div>}
 
             {showShareSettings && <div className="shareSettings" onClick={() => {
-                window.location.href = "categories"
+                goBackInTheRoute()
                 selectPayMethod()
             }}>
                 <div className="frame-parent-share">
