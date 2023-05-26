@@ -9,10 +9,10 @@ export function CategoriesComponent() {
 
     let navigate = useNavigate();
 
-    const goBackInTheRoute = () =>{
+    const goBackInTheRoute = () => {
         navigate('/', {replace: true});
     }
-    const goAheadInTheRoute = () =>{
+    const goAheadInTheRoute = () => {
         navigate('/price', {replace: true});
     }
 
@@ -20,8 +20,8 @@ export function CategoriesComponent() {
         <div className="page-container">
             <div className="header">
                 <div className="title">Marktplatz</div>
-                <div className="back-icon-wrapper" onClick={
-                    () => goBackInTheRoute}>
+                <div className="back-icon-wrapper"
+                     onClick={goBackInTheRoute}>
                     <img
                         className="back-icon"
                         alt=""
@@ -36,7 +36,6 @@ export function CategoriesComponent() {
                     goAheadInTheRoute();
                     console.log(currentState.adType)
                     console.log(currentState.category)
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -52,7 +51,6 @@ export function CategoriesComponent() {
                 <div className="clean-button" onClick={() => {
                     setCurrentState({...currentState, category: "Reinigungsarbeiten"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -68,7 +66,6 @@ export function CategoriesComponent() {
                 <div className="maintenance-button" onClick={() => {
                     setCurrentState({...currentState, category: "Gebäudeunterhalt & Technik"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -89,7 +86,6 @@ export function CategoriesComponent() {
                 <div className="support-button" onClick={() => {
                     setCurrentState({...currentState, category: "Alltagsunterstützung"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -105,7 +101,6 @@ export function CategoriesComponent() {
                 <div className="catering-button" onClick={() => {
                     setCurrentState({...currentState, category: "Verpflegung"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -121,7 +116,6 @@ export function CategoriesComponent() {
                 <div className="transport-button" onClick={() => {
                     setCurrentState({...currentState, category: "Transport"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -142,7 +136,6 @@ export function CategoriesComponent() {
                 <div className="admin-button" onClick={() => {
                     setCurrentState({...currentState, category: "Administration"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -159,7 +152,6 @@ export function CategoriesComponent() {
                 <div className="pet-button" onClick={() => {
                     setCurrentState({...currentState, category: "Haustier"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -175,7 +167,6 @@ export function CategoriesComponent() {
                 <div className="children-button" onClick={() => {
                     setCurrentState({...currentState, category: "Kinder"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -191,7 +182,6 @@ export function CategoriesComponent() {
                 <div className="leisure-button" onClick={() => {
                     setCurrentState({...currentState, category: "Freizeigestaltung"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -207,7 +197,6 @@ export function CategoriesComponent() {
                 <div className="courses-button" onClick={() => {
                     setCurrentState({...currentState, category: "Kurse & Schulungen"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -223,7 +212,6 @@ export function CategoriesComponent() {
                 <div className="products-button" onClick={() => {
                     setCurrentState({...currentState, category: "Produkte"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -239,7 +227,6 @@ export function CategoriesComponent() {
                 <div className="jobs-button" onClick={() => {
                     setCurrentState({...currentState, category: "Arbeitsstellen"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -255,7 +242,6 @@ export function CategoriesComponent() {
                 <div className="apprenticeships-button" onClick={() => {
                     setCurrentState({...currentState, category: "Lehrstellen"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -271,7 +257,6 @@ export function CategoriesComponent() {
                 <div className="consulting-button" onClick={() => {
                     setCurrentState({...currentState, category: "Beratung"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -287,7 +272,6 @@ export function CategoriesComponent() {
                 <div className="diverses-button" onClick={() => {
                     setCurrentState({...currentState, category: "Diverses"})
                     goAheadInTheRoute();
-                    // window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
                         <img

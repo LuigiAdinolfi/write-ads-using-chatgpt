@@ -150,9 +150,9 @@ export function ContactComponent() {
                          onClick={() => {
                              selectContactMethod()
                              goAheadInTheRoute()
-                        //TODO
-                        // sendToChatGPT()
-                    }}>
+                             //TODO
+                             // sendToChatGPT()
+                         }}>
                         <div className="icon-wrapper-confirm">
                             <img
                                 className="icon-confirm"
@@ -184,8 +184,6 @@ export function ContactComponent() {
                     <div className="confirm-button" onClick={() => {
                         selectContactMethod()
                         goAheadInTheRoute()
-                        //TODO
-                        // sendToChatGPT()
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img
@@ -218,8 +216,6 @@ export function ContactComponent() {
                     <div className="confirm-button" onClick={() => {
                         selectContactMethod()
                         goAheadInTheRoute()
-                        //TODO
-                        // sendToChatGPT()
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img

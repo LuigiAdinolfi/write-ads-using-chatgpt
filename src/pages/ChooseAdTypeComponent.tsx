@@ -1,23 +1,15 @@
 import "./ChooseAdTypeComponent.css";
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
 
-export function ChooseAdTypeComponent () {
-    // let zipCode = "5210"
-    // let place = "Windisch"
+export function ChooseAdTypeComponent() {
 
     const {currentState, setCurrentState} = useContext(StateContext);
 
-    // useEffect(() => {
-    //     console.log(currentState.zipCode)
-    //     console.log(currentState.place)
-    //     console.log(currentState.adType)
-    // }, [currentState.adType]);
-
     let navigate = useNavigate();
 
-    const goAheadInTheRoute = () =>{
+    const goAheadInTheRoute = () => {
         navigate('/categories', {replace: true});
     }
 
@@ -40,7 +32,6 @@ export function ChooseAdTypeComponent () {
                 <div className="offer-button" onClick={() => {
                     setCurrentState({...currentState, adType: "Ich biete"});
                     goAheadInTheRoute();
-                    // window.location.href = "categories"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -56,7 +47,6 @@ export function ChooseAdTypeComponent () {
                 <div className="search-button" onClick={() => {
                     setCurrentState({...currentState, adType: "Ich suche"});
                     goAheadInTheRoute();
-                    // window.location.href = "categories"
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -70,7 +60,6 @@ export function ChooseAdTypeComponent () {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }

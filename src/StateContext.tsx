@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { FullState, initialFullState } from "./State";
+import {createContext} from "react";
+import {FullState, initialFullState} from "./State";
 
 interface StateContextProps {
     currentState: FullState;
@@ -8,5 +8,6 @@ interface StateContextProps {
 
 export const StateContext = createContext<StateContextProps>({
     currentState: initialFullState(),
-    setCurrentState: () => {},
+    setCurrentState: () => {
+    },
 });

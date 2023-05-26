@@ -27,7 +27,6 @@ export function OutputComponent() {
         navigate('/', {replace: true});
     }
 
-
     useEffect(() => {
         const getOutput = async () => {
             console.log(textRequest)
@@ -76,10 +75,10 @@ export function OutputComponent() {
                     <div className="text">{message}</div>
                 </div>
             </div>
-            <div className="refresh-icon-wrapper" onClick={
-                // getOutput
-                () => stayOnThePage()
-            }>
+            <div className="refresh-icon-wrapper" onClick={() => {
+                // getOutput();
+                stayOnThePage()
+            }}>
                 <img
                     className="refresh-icon"
                     alt=""
