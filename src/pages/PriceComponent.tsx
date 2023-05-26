@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./PriceComponent.css";
 import {FullState} from "../State";
+import {StateContext} from "../StateContext";
 
-export function PriceComponent(props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
+export function PriceComponent() {
     const [hours, setHours] = React.useState(0);
     const [moneyAmount, setMoneyAmount] = React.useState(0);
     const [showMoneySettings, setShowMoneySettings] = React.useState(false)
@@ -12,6 +13,8 @@ export function PriceComponent(props: { currentState: FullState, setCurrentState
     const [showingMoneyButton, setShowingMoneyButton] = React.useState(true)
     const [showingTimeButton, setShowingTimeButton] = React.useState(true)
     const [showingSharingButton, setShowingSharingButton] = React.useState(true)
+
+    const {currentState, setCurrentState} = useContext(StateContext);
 
     function incrementHours() {
         setHours(hours + 1);
@@ -79,19 +82,19 @@ export function PriceComponent(props: { currentState: FullState, setCurrentState
 
     function selectPayMethod() {
         if (chosenPaymentMethod === "money") {
-            props.setCurrentState({
-                ...props.currentState,
+            setCurrentState({
+                ...currentState,
                 paymentMethod: `${moneyAmount} Franken pro Stunde`
             });
         } else if (chosenPaymentMethod === "time") {
-            props.setCurrentState({
-                ...props.currentState,
+            setCurrentState({
+                ...currentState,
                 paymentMethod: `${hours} Stunden auf dem Zeitkonto`
             });
         } else if (chosenPaymentMethod === "share") {
-            props.setCurrentState({
-                ...props.currentState,
-                paymentMethod: `Teilen gegen ${props.currentState.shareAgainst}`
+            setCurrentState({
+                ...currentState,
+                paymentMethod: `Teilen gegen ${currentState.shareAgainst}`
             });
         }
     }

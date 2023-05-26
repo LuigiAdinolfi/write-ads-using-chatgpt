@@ -11,6 +11,7 @@ import PriceComponent from "./pages/PriceComponent";
 import ContactComponent from "./pages/ContactComponent";
 import OutputComponent from "./pages/OutputComponent";
 import {initialFullState} from "./State";
+import {StateContext} from "./StateContext";
 
 function App() {
     const action = useNavigationType();
@@ -51,13 +52,15 @@ function App() {
     }, [pathname]);
 
     return (
-        <Routes>
-            <Route path="/" element={<ChooseAdTypeComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
-            <Route path="/categories" element={<CategoriesComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
-            <Route path="/price" element={<PriceComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
-            <Route path="/contact" element={<ContactComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
-            <Route path="/output" element={<OutputComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
-        </Routes>
+        <StateContext.Provider value={{currentState, setCurrentState}}>
+            <Routes>
+                <Route path="/" element={<ChooseAdTypeComponent/>}/>
+                <Route path="/categories" element={<CategoriesComponent/>}/>
+                <Route path="/price" element={<PriceComponent/>}/>
+                <Route path="/contact" element={<ContactComponent/>}/>
+                <Route path="/output" element={<OutputComponent/>}/>
+            </Routes>
+        </StateContext.Provider>
     );
 }
 

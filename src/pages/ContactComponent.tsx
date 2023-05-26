@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./ContactComponent.css";
 import {FullState} from "../State";
+import {StateContext} from "../StateContext";
 
-export function ContactComponent(props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
+export function ContactComponent() {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
     const [showPhoneSettings, setShowPhoneSettings] = React.useState(false)
     const [showFormSettings, setShowFormSettings] = React.useState(false)
     const [showingEmailButton, setShowingEmailButton] = React.useState(true)
     const [showingPhoneButton, setShowingPhoneButton] = React.useState(true)
     const [showingFormButton, setShowingFormButton] = React.useState(true)
+
+    const {currentState, setCurrentState} = useContext(StateContext);
 
     function selectEmailSettings() {
         setShowEmailSettings(true);
@@ -39,11 +42,11 @@ export function ContactComponent(props: { currentState: FullState, setCurrentSta
 
     function selectContactMethod() {
         if (showEmailSettings) {
-            props.setCurrentState({...props.currentState, contactMethod: `E-Mail: ${props.currentState.email}`})
+            setCurrentState({...currentState, contactMethod: `E-Mail: ${currentState.email}`})
         } else if (showPhoneSettings) {
-            props.setCurrentState({...props.currentState, contactMethod: `Telefon: ${props.currentState.phone}`})
+            setCurrentState({...currentState, contactMethod: `Telefon: ${currentState.phone}`})
         } else if (showFormSettings) {
-            props.setCurrentState({...props.currentState, contactMethod: `Formular: ${props.currentState.form}`})
+            setCurrentState({...currentState, contactMethod: `Formular: ${currentState.form}`})
         }
     }
 
@@ -114,7 +117,7 @@ export function ContactComponent(props: { currentState: FullState, setCurrentSta
             {showEmailSettings && <div className="emailSettings">
                 <div className="frame-parent">
                     <div className="email-settings-parent">
-                        <div className="email">{props.currentState.email}</div>
+                        <div className="email">{currentState.email}</div>
                     </div>
                 </div>
 
@@ -148,7 +151,7 @@ export function ContactComponent(props: { currentState: FullState, setCurrentSta
             {showPhoneSettings && <div className="phoneSettings">
                 <div className="frame-parent">
                     <div className="phone-settings-parent">
-                        <div className="phone">{props.currentState.phone}</div>
+                        <div className="phone">{currentState.phone}</div>
                     </div>
                 </div>
                 <div className="grid-container-contact-select">
@@ -181,7 +184,7 @@ export function ContactComponent(props: { currentState: FullState, setCurrentSta
             {showFormSettings && <div className="formSettings">
                 <div className="frame-parent">
                     <div className="form-settings-parent">
-                        <div className="form">{props.currentState.form}</div>
+                        <div className="form">{currentState.form}</div>
                     </div>
                 </div>
                 <div className="grid-container-contact-select">

@@ -1,21 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./OutputComponent.css";
-import {FullState} from "../State";
+import {StateContext} from "../StateContext";
 
-export function OutputComponent(props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
+export function OutputComponent() {
+
+    const {currentState, setCurrentState} = useContext(StateContext);
 
     let [textRequest] = React.useState(`Schreiben Sie mir ein Inserat unterteilt in 
-    'Titel' und 'Beschreibung' mit folgenden Stichworten: Was: ${props.currentState.adType}, 
-    Kategorie: ${props.currentState.category}, Bezahlung: ${props.currentState.paymentMethod}, 
-    Kontakt: ${props.currentState.contactMethod}`);
+    'Titel' und 'Beschreibung' mit folgenden Stichworten: Was: ${currentState.adType}, 
+    Kategorie: ${currentState.category}, Bezahlung: ${currentState.paymentMethod}, 
+    Kontakt: ${currentState.contactMethod}`);
 
     const [message, setMessage] = useState(null)
 
-    function setOutput() {
-        if (message != null) {
-            props.setCurrentState({...props.currentState, output: message})
-        }
-    }
 
     useEffect(() => {
         const getOutput = async () => {
@@ -42,7 +39,9 @@ export function OutputComponent(props: { currentState: FullState, setCurrentStat
     }, []);
 
     useEffect(() => {
-        setOutput();
+        if (message != null) {
+            setCurrentState({...currentState, output: message})
+        }
     }, [message]);
 
     return (

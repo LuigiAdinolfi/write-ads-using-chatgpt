@@ -1,9 +1,14 @@
 import "./ChooseAdTypeComponent.css";
 import {FullState} from "../State";
+import {useContext} from "react";
+import {StateContext} from "../StateContext";
 
-export function ChooseAdTypeComponent (props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
+export function ChooseAdTypeComponent () {
     // let zipCode = "5210"
     // let place = "Windisch"
+
+    const {currentState, setCurrentState} = useContext(StateContext);
+
     return (
         <div className="page-container">
             <div className="header">
@@ -17,11 +22,11 @@ export function ChooseAdTypeComponent (props: { currentState: FullState, setCurr
                 </div>
             </div>
             <div className="subtitle-home">Ort</div>
-            <div className="place">{`${props.currentState.zipCode} ${props.currentState.place}`}</div>
+            <div className="place">{`${currentState.zipCode} ${currentState.place}`}</div>
 
             <div className="grid-container-home">
                 <div className="offer-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, adType: "Ich biete"});
+                    setCurrentState({...currentState, adType: "Ich biete"});
                     window.location.href = "categories"
                 }}>
                     <div className="icon-wrapper">
@@ -36,7 +41,7 @@ export function ChooseAdTypeComponent (props: { currentState: FullState, setCurr
                     </div>
                 </div>
                 <div className="search-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, adType: "Ich suche"});
+                    setCurrentState({...currentState, adType: "Ich suche"});
                     window.location.href = "categories"
                 }}>
                     <div className="icon-wrapper">

@@ -1,7 +1,12 @@
 import "./CategoriesComponent.css";
 import {FullState} from "../State";
+import {useContext} from "react";
+import {StateContext} from "../StateContext";
 
-export function CategoriesComponent(props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
+export function CategoriesComponent() {
+
+    const {currentState, setCurrentState} = useContext(StateContext);
+
     return (
         <div className="page-container">
             <div className="header">
@@ -17,7 +22,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
             <div className="subtitle">Kategorie auswählen</div>
             <div className="grid-container">
                 <div className="share-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Teilen"})
+                    setCurrentState({...currentState, category: "Teilen"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -32,7 +37,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="clean-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Reinigungsarbeiten"})
+                    setCurrentState({...currentState, category: "Reinigungsarbeiten"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -47,7 +52,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="maintenance-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Gebäudeunterhalt & Technik"})
+                    setCurrentState({...currentState, category: "Gebäudeunterhalt & Technik"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -67,7 +72,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="support-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Alltagsunterstützung"})
+                    setCurrentState({...currentState, category: "Alltagsunterstützung"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -82,7 +87,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="catering-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Verpflegung"})
+                    setCurrentState({...currentState, category: "Verpflegung"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -97,7 +102,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="transport-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Transport"})
+                    setCurrentState({...currentState, category: "Transport"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -117,7 +122,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="admin-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Administration"})
+                    setCurrentState({...currentState, category: "Administration"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -133,7 +138,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="pet-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Haustier"})
+                    setCurrentState({...currentState, category: "Haustier"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -148,7 +153,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="children-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Kinder"})
+                    setCurrentState({...currentState, category: "Kinder"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -163,7 +168,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="leisure-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Freizeigestaltung"})
+                    setCurrentState({...currentState, category: "Freizeigestaltung"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -178,7 +183,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="courses-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Kurse & Schulungen"})
+                    setCurrentState({...currentState, category: "Kurse & Schulungen"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -193,7 +198,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="products-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Produkte"})
+                    setCurrentState({...currentState, category: "Produkte"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -208,7 +213,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="jobs-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Arbeitsstellen"})
+                    setCurrentState({...currentState, category: "Arbeitsstellen"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -223,7 +228,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="apprenticeships-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Lehrstellen"})
+                    setCurrentState({...currentState, category: "Lehrstellen"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -238,7 +243,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="consulting-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Beratung"})
+                    setCurrentState({...currentState, category: "Beratung"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
@@ -253,7 +258,7 @@ export function CategoriesComponent(props: { currentState: FullState, setCurrent
                     </div>
                 </div>
                 <div className="diverses-button" onClick={() => {
-                    props.setCurrentState({...props.currentState, category: "Diverses"})
+                    setCurrentState({...currentState, category: "Diverses"})
                     window.location.href = "price"
                 }}>
                     <div className="icon-wrapper">
