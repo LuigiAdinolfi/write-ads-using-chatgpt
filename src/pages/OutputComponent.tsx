@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import "./OutputComponent.css";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
+import Timeline from "./Timeline";
 
 export function OutputComponent() {
 
@@ -116,6 +117,7 @@ export function OutputComponent() {
                     </div>
                 </div>
             </div>
+            <Timeline/>
         </div>
     );
 }

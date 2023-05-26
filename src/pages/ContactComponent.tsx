@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import "./ContactComponent.css";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
+import Timeline from "./Timeline";
 
 export function ContactComponent() {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
@@ -16,7 +17,7 @@ export function ContactComponent() {
     let navigate = useNavigate();
 
     const goBackInTheRoute = () => {
-        navigate('/price', {replace: true});
+        navigate('/payment', {replace: true});
     }
 
     const stayOnThePage = () => {
@@ -225,6 +226,7 @@ export function ContactComponent() {
                     </div>
                 </div>
             </div>}
+            <Timeline/>
         </div>
     );
 }

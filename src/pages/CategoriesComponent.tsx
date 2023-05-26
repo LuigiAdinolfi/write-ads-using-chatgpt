@@ -2,6 +2,7 @@ import "./CategoriesComponent.css";
 import {useContext} from "react";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
+import Timeline from "./Timeline";
 
 export function CategoriesComponent() {
 
@@ -13,7 +14,7 @@ export function CategoriesComponent() {
         navigate('/', {replace: true});
     }
     const goAheadInTheRoute = () => {
-        navigate('/price', {replace: true});
+        navigate('/payment', {replace: true});
     }
 
     return (
@@ -285,6 +286,7 @@ export function CategoriesComponent() {
                     </div>
                 </div>
             </div>
+            <Timeline/>
         </div>
     );
 }

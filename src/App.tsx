@@ -7,7 +7,7 @@ import {
 import CategoriesComponent from "./pages/CategoriesComponent";
 import {useEffect, useState} from "react";
 import ChooseAdTypeComponent from "./pages/ChooseAdTypeComponent";
-import PriceComponent from "./pages/PriceComponent";
+import PaymentComponent from "./pages/PaymentComponent";
 import ContactComponent from "./pages/ContactComponent";
 import OutputComponent from "./pages/OutputComponent";
 import {initialFullState} from "./State";
@@ -56,7 +56,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<ChooseAdTypeComponent/>}/>
                 <Route path="/categories" element={<CategoriesComponent/>}/>
-                <Route path="/price" element={<PriceComponent/>}/>
+                <Route path="/payment" element={<PaymentComponent/>}/>
                 <Route path="/contact" element={<ContactComponent/>}/>
                 <Route path="/output" element={<OutputComponent/>}/>
             </Routes>

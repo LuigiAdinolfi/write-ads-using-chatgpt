@@ -9,7 +9,7 @@
     grid-row-gap: 4rem;
     grid-template-areas:
     "offer-button search-button";
-    padding-bottom: 10rem;
+    padding-bottom: 20rem;
 }
 
 .subtitle-home {

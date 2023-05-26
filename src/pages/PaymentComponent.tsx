@@ -1,14 +1,16 @@
 import React, {useContext} from "react";
-import "./PriceComponent.css";
+import "./PaymentComponent.css";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
+import Timeline from "./Timeline";
 
-export function PriceComponent() {
+export function PaymentComponent() {
     const [hours, setHours] = React.useState(0);
     const [moneyAmount, setMoneyAmount] = React.useState(0);
     const [showMoneySettings, setShowMoneySettings] = React.useState(false)
     const [showHourSettings, setShowHourSettings] = React.useState(false)
     const [showShareSettings, setShowShareSettings] = React.useState(false)
+    const [showEmptySettings, setShowEmptySettings] = React.useState(true)
     const [chosenPaymentMethod, setChosenPaymentMethod] = React.useState("");
     const [showingMoneyButton, setShowingMoneyButton] = React.useState(true)
     const [showingTimeButton, setShowingTimeButton] = React.useState(true)
@@ -23,7 +25,7 @@ export function PriceComponent() {
     }
 
     const stayOnThePage = () => {
-        navigate('/price', {replace: true});
+        navigate('/payment', {replace: true});
     }
     const goAheadInTheRoute = () => {
         navigate('/contact', {replace: true});
@@ -71,6 +73,7 @@ export function PriceComponent() {
         setShowingMoneyButton(true)
         setShowingSharingButton(false)
         setShowingTimeButton(false)
+        setShowEmptySettings(false)
     }
 
     function selectHourSettings() {
@@ -81,6 +84,7 @@ export function PriceComponent() {
         setShowingTimeButton(true)
         setShowingSharingButton(false)
         setShowingMoneyButton(false)
+        setShowEmptySettings(false)
     }
 
     function selectShareSettings() {
@@ -91,6 +95,7 @@ export function PriceComponent() {
         setShowingSharingButton(true)
         setShowingMoneyButton(false)
         setShowingTimeButton(false)
+        setShowEmptySettings(false)
     }
 
     function selectPayMethod() {
@@ -126,7 +131,7 @@ export function PriceComponent() {
                 </div>
             </div>
             <div className="subtitle">Preis</div>
-            <div className="grid-container-price">
+            <div className="grid-container-payment">
                 <div className="money-button"
                      style={{opacity: showingMoneyButton ? 1.0 : 0.3}}
                      onClick={() => {
@@ -177,6 +182,41 @@ export function PriceComponent() {
                 </div>
             </div>
 
+            {showEmptySettings && <div className="moneySettings">
+                <div className="frame-parent">
+                    <div className="empty-settings-parent">
+                        <img className="empty-icon" alt="" src="/remove.png" onClick={decrementMoneyAmount}/>
+                        <div className="money">{showMoneyAmount()}</div>
+                        <img className="empty-icon" alt="" src="/add.png" onClick={incrementMoneyAmount}/>
+                    </div>
+                </div>
+
+                <div className="empty-grid-container-payment-select">
+                    <div className="reject-button"
+                         onClick={() => stayOnThePage()}>
+                        <div className="icon-wrapper-empty">
+                            <img
+                                className="icon-reject"
+                                alt=""
+                                src="/cross.png"
+                            />
+                        </div>
+                    </div>
+                    <div className="confirm-button" onClick={() => {
+                        goAheadInTheRoute()
+                        selectPayMethod()
+                    }}>
+                        <div className="icon-wrapper-empty">
+                            <img
+                                className="icon-confirm"
+                                alt=""
+                                src="/check.png"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>}
+
             {showMoneySettings && <div className="moneySettings">
                 <div className="frame-parent">
                     <div className="money-settings-parent">
@@ -186,7 +226,7 @@ export function PriceComponent() {
                     </div>
                 </div>
 
-                <div className="grid-container-price-select">
+                <div className="grid-container-payment-select">
                     <div className="reject-button"
                          onClick={() => stayOnThePage()}>
                         <div className="icon-wrapper-reject">
@@ -221,7 +261,7 @@ export function PriceComponent() {
                     </div>
                 </div>
 
-                <div className="grid-container-price-select">
+                <div className="grid-container-payment-select">
                     <div className="reject-button" onClick={() => {
                         stayOnThePage()
                     }}>
@@ -258,9 +298,34 @@ export function PriceComponent() {
                         <img className="plus-icon-share" alt="" src="/menu.png"/>
                     </div>
                 </div>
+                <div className="empty-grid-container-payment-select">
+                    <div className="reject-button"
+                         onClick={() => stayOnThePage()}>
+                        <div className="icon-wrapper-empty">
+                            <img
+                                className="icon-reject"
+                                alt=""
+                                src="/cross.png"
+                            />
+                        </div>
+                    </div>
+                    <div className="confirm-button" onClick={() => {
+                        goAheadInTheRoute()
+                        selectPayMethod()
+                    }}>
+                        <div className="icon-wrapper-empty">
+                            <img
+                                className="icon-confirm"
+                                alt=""
+                                src="/check.png"
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>}
+            <Timeline/>
         </div>
     );
 }
 
-export default PriceComponent;
+export default PaymentComponent;
