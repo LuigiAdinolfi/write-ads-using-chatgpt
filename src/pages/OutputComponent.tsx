@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./OutputComponent.css";
 import {FullState} from "../State";
 
-export function OutputComponent(props: { currentState: FullState }) {
+export function OutputComponent(props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
 
     let [textRequest] = React.useState(`Schreiben Sie mir ein Inserat unterteilt in 
     'Titel' und 'Beschreibung' mit folgenden Stichworten: Was: ${props.currentState.adType}, 
@@ -10,36 +10,40 @@ export function OutputComponent(props: { currentState: FullState }) {
     Kontakt: ${props.currentState.contactMethod}`);
 
     const [message, setMessage] = useState(null)
-    const getOutput = async () => {
-        console.log(textRequest)
-        const options = {
-            method: "POST",
-            body: JSON.stringify({
-                message: textRequest,
-            }),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-        try {
-            const response = await fetch('http://localhost:8000/completions', options)
-            const data = await response.json()
-            console.log(data)
-            setMessage(data.choices[0].message.content)
-        } catch (error) {
-            console.error(error)
-        }
-    }
 
     function setOutput() {
         if (message != null) {
-            props.currentState.output = message;
+            props.setCurrentState({...props.currentState, output: message})
         }
     }
 
     useEffect(() => {
-        getOutput().then(r => setOutput());
+        const getOutput = async () => {
+            console.log(textRequest)
+            const options = {
+                method: "POST",
+                body: JSON.stringify({
+                    message: textRequest,
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+            try {
+                const response = await fetch('http://localhost:8000/completions', options)
+                const data = await response.json()
+                console.log(data)
+                setMessage(data.choices[0].message.content)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        getOutput();
     }, []);
+
+    useEffect(() => {
+        setOutput();
+    }, [message]);
 
     return (
         <div className="page-container">

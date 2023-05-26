@@ -2,7 +2,7 @@ import React from "react";
 import "./ContactComponent.css";
 import {FullState} from "../State";
 
-export function ContactComponent(props: { currentState: FullState }) {
+export function ContactComponent(props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
     const [showPhoneSettings, setShowPhoneSettings] = React.useState(false)
     const [showFormSettings, setShowFormSettings] = React.useState(false)
@@ -39,11 +39,11 @@ export function ContactComponent(props: { currentState: FullState }) {
 
     function selectContactMethod() {
         if (showEmailSettings) {
-            props.currentState.contactMethod = `E-Mail: ${props.currentState.email}`
+            props.setCurrentState({...props.currentState, contactMethod: `E-Mail: ${props.currentState.email}`})
         } else if (showPhoneSettings) {
-            props.currentState.contactMethod = `Telefon: ${props.currentState.phone}`
+            props.setCurrentState({...props.currentState, contactMethod: `Telefon: ${props.currentState.phone}`})
         } else if (showFormSettings) {
-            props.currentState.contactMethod = `${props.currentState.form}`
+            props.setCurrentState({...props.currentState, contactMethod: `Formular: ${props.currentState.form}`})
         }
     }
 

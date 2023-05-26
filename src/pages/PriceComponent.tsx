@@ -2,7 +2,7 @@ import React from "react";
 import "./PriceComponent.css";
 import {FullState} from "../State";
 
-export function PriceComponent(props: { currentState: FullState }) {
+export function PriceComponent(props: { currentState: FullState, setCurrentState: (newState: FullState) => void }) {
     const [hours, setHours] = React.useState(0);
     const [moneyAmount, setMoneyAmount] = React.useState(0);
     const [showMoneySettings, setShowMoneySettings] = React.useState(false)
@@ -79,11 +79,20 @@ export function PriceComponent(props: { currentState: FullState }) {
 
     function selectPayMethod() {
         if (chosenPaymentMethod === "money") {
-            props.currentState.paymentMethod = `${moneyAmount} Franken pro Stunde`;
+            props.setCurrentState({
+                ...props.currentState,
+                paymentMethod: `${moneyAmount} Franken pro Stunde`
+            });
         } else if (chosenPaymentMethod === "time") {
-            props.currentState.paymentMethod = `${hours} Stunden auf dem Zeitkonto`;
+            props.setCurrentState({
+                ...props.currentState,
+                paymentMethod: `${hours} Stunden auf dem Zeitkonto`
+            });
         } else if (chosenPaymentMethod === "share") {
-            props.currentState.paymentMethod = `Teilen gegen ${props.currentState.shareAgainst}`;
+            props.setCurrentState({
+                ...props.currentState,
+                paymentMethod: `Teilen gegen ${props.currentState.shareAgainst}`
+            });
         }
     }
 

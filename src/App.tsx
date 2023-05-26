@@ -17,7 +17,7 @@ function App() {
     const location = useLocation();
     const pathname = location.pathname;
 
-    const [globalState] = useState(initialFullState());
+    const [currentState, setCurrentState] = useState(initialFullState());
 
     useEffect(() => {
         if (action !== "POP") {
@@ -52,11 +52,11 @@ function App() {
 
     return (
         <Routes>
-            <Route path="/" element={<ChooseAdTypeComponent currentState={globalState}/>}/>
-            <Route path="/categories" element={<CategoriesComponent currentState={globalState}/>}/>
-            <Route path="/price" element={<PriceComponent currentState={globalState}/>}/>
-            <Route path="/contact" element={<ContactComponent currentState={globalState}/>}/>
-            <Route path="/output" element={<OutputComponent currentState={globalState}/>}/>
+            <Route path="/" element={<ChooseAdTypeComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
+            <Route path="/categories" element={<CategoriesComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
+            <Route path="/price" element={<PriceComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
+            <Route path="/contact" element={<ContactComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
+            <Route path="/output" element={<OutputComponent currentState={currentState} setCurrentState={setCurrentState}/>}/>
         </Routes>
     );
 }
