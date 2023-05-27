@@ -20,16 +20,9 @@ export function PaymentComponent() {
 
     let navigate = useNavigate();
 
-    const goBackInTheRoute = () => {
-        navigate('/categories', {replace: true});
-    }
-
-    const stayOnThePage = () => {
-        navigate('/payment', {replace: true});
-    }
-    const goAheadInTheRoute = () => {
-        navigate('/contact', {replace: true});
-    }
+    const handleNavigation = (route: string) => {
+        navigate(route, { replace: true });
+    };
 
     function incrementHours() {
         setHours(hours + 1);
@@ -122,7 +115,7 @@ export function PaymentComponent() {
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
-                     onClick={() => goBackInTheRoute()}>
+                     onClick={() => handleNavigation('/categories')}>
                     <img
                         className="back-icon"
                         alt=""
@@ -193,7 +186,7 @@ export function PaymentComponent() {
 
                 <div className="empty-grid-container-payment-select">
                     <div className="reject-button"
-                         onClick={() => stayOnThePage()}>
+                         onClick={() => handleNavigation('/payment')}>
                         <div className="icon-wrapper-empty">
                             <img
                                 className="icon-reject"
@@ -203,8 +196,8 @@ export function PaymentComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        goAheadInTheRoute()
                         selectPayMethod()
+                        handleNavigation('/contact')
                     }}>
                         <div className="icon-wrapper-empty">
                             <img
@@ -228,7 +221,7 @@ export function PaymentComponent() {
 
                 <div className="grid-container-payment-select">
                     <div className="reject-button"
-                         onClick={() => stayOnThePage()}>
+                         onClick={() => handleNavigation('/payment')}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -238,8 +231,8 @@ export function PaymentComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        goAheadInTheRoute()
                         selectPayMethod()
+                        handleNavigation('/contact')
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img
@@ -263,7 +256,7 @@ export function PaymentComponent() {
 
                 <div className="grid-container-payment-select">
                     <div className="reject-button" onClick={() => {
-                        stayOnThePage()
+                        handleNavigation('/categories')
                     }}>
                         <div className="icon-wrapper-reject">
                             <img
@@ -274,8 +267,8 @@ export function PaymentComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        goAheadInTheRoute()
                         selectPayMethod()
+                        handleNavigation('/contact')
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img
@@ -289,8 +282,8 @@ export function PaymentComponent() {
             </div>}
 
             {showShareSettings && <div className="shareSettings" onClick={() => {
-                goBackInTheRoute()
                 selectPayMethod()
+                handleNavigation('/categories')
             }}>
                 <div className="frame-parent-share">
                     <div className="shareSomething-settings-parent">
@@ -300,7 +293,7 @@ export function PaymentComponent() {
                 </div>
                 <div className="empty-grid-container-payment-select">
                     <div className="reject-button"
-                         onClick={() => stayOnThePage()}>
+                         onClick={() => handleNavigation('/categories')}>
                         <div className="icon-wrapper-empty">
                             <img
                                 className="icon-reject"
@@ -310,8 +303,8 @@ export function PaymentComponent() {
                         </div>
                     </div>
                     <div className="confirm-button" onClick={() => {
-                        goAheadInTheRoute()
                         selectPayMethod()
+                        handleNavigation('/contact')
                     }}>
                         <div className="icon-wrapper-empty">
                             <img

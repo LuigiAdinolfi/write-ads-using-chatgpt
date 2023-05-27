@@ -11,9 +11,9 @@ export function ChooseAdTypeComponent() {
 
     let navigate = useNavigate();
 
-    const goAheadInTheRoute = () => {
-        navigate('/categories', {replace: true});
-    }
+    const handleNavigation = (route: string) => {
+        navigate(route, { replace: true });
+    };
 
     return (
         <div className="page-container">
@@ -33,7 +33,7 @@ export function ChooseAdTypeComponent() {
             <div className="grid-container-home">
                 <div className="offer-button" onClick={() => {
                     setCurrentState({...currentState, adType: "Ich biete"});
-                    goAheadInTheRoute();
+                    handleNavigation('/categories')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -48,7 +48,7 @@ export function ChooseAdTypeComponent() {
                 </div>
                 <div className="search-button" onClick={() => {
                     setCurrentState({...currentState, adType: "Ich suche"});
-                    goAheadInTheRoute();
+                    handleNavigation('/categories')
                 }}>
                     <div className="icon-wrapper">
                         <img

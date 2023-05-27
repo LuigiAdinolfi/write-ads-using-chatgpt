@@ -17,14 +17,14 @@
 .money-settings-parent {
     border-radius: var(--br-base);
     background-color: #4F4F4F;
-    font-size: 3rem;
+    font-size: 2.6rem;
     width: 38rem;
     height: 8rem;
     overflow: hidden;
     flex-shrink: 0;
     flex-direction: row;
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     justify-content: space-between;
     gap: 2.75rem;
 }
@@ -37,8 +37,8 @@
     overflow: hidden;
     flex-shrink: 0;
     flex-direction: row;
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     justify-content: center;
     gap: 2.75rem;
 }

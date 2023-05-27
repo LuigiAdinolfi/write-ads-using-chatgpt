@@ -1,14 +1,14 @@
 import React, {useContext, useEffect, useState} from "react";
-import "./OutputComponent.css";
-import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
+import {StateContext} from "../StateContext";
 import Timeline from "./Timeline";
+import "./OutputComponent.css";
 
 export function OutputComponent() {
 
     const {currentState, setCurrentState} = useContext(StateContext);
 
-    let [textRequest] = React.useState(`Schreiben Sie mir ein Inserat unterteilt in 
+    const [textRequest] = useState(`Schreiben Sie mir ein Inserat unterteilt in 
     'Titel' und 'Beschreibung' mit folgenden Stichworten: Was: ${currentState.adType}, 
     Kategorie: ${currentState.category}, Bezahlung: ${currentState.paymentMethod}, 
     Kontakt: ${currentState.contactMethod}`);
@@ -17,16 +17,9 @@ export function OutputComponent() {
 
     let navigate = useNavigate();
 
-    const goBackInTheRoute = () => {
-        navigate('/contact', {replace: true});
-    }
-
-    const stayOnThePage = () => {
-        navigate('/output', {replace: true});
-    }
-    const goAheadInTheRoute = () => {
-        navigate('/', {replace: true});
-    }
+    const handleNavigation = (route: string) => {
+        navigate(route, { replace: true });
+    };
 
     function getAdText() {
         const getOutput = async () => {
@@ -67,7 +60,7 @@ export function OutputComponent() {
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
-                     onClick={() => goBackInTheRoute()}>
+                     onClick={() => handleNavigation('/contact')}>
                     <img
                         className="back-icon"
                         alt=""
@@ -82,7 +75,7 @@ export function OutputComponent() {
             </div>
             <div className="refresh-icon-wrapper" onClick={() => {
                 getAdText()
-                stayOnThePage()
+                handleNavigation('/output')
             }}>
                 <img
                     className="refresh-icon"
@@ -97,7 +90,7 @@ export function OutputComponent() {
             </div>
             <div className="grid-container-output-select">
                 <div className="reject-button"
-                     onClick={() => stayOnThePage()}>
+                     onClick={() => handleNavigation('/')}>
                     <div className="icon-wrapper-reject">
                         <img
                             className="icon-reject"
@@ -109,7 +102,7 @@ export function OutputComponent() {
 
                 <div className="confirm-button" onClick={
                     () => {
-                        goAheadInTheRoute();
+                        handleNavigation('/')
                     }
                 }>
                     <div className="icon-wrapper-confirm">

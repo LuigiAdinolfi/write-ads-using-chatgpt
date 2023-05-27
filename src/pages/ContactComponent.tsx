@@ -16,16 +16,9 @@ export function ContactComponent() {
 
     let navigate = useNavigate();
 
-    const goBackInTheRoute = () => {
-        navigate('/payment', {replace: true});
-    }
-
-    const stayOnThePage = () => {
-        navigate('/contact', {replace: true});
-    }
-    const goAheadInTheRoute = () => {
-        navigate('/output', {replace: true});
-    }
+    const handleNavigation = (route: string) => {
+        navigate(route, { replace: true });
+    };
 
     function selectEmailSettings() {
         setShowEmailSettings(true);
@@ -69,7 +62,7 @@ export function ContactComponent() {
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
-                     onClick={() => goBackInTheRoute()}>
+                     onClick={() => handleNavigation('/payment')}>
                     <img
                         className="back-icon"
                         alt=""
@@ -138,7 +131,7 @@ export function ContactComponent() {
 
                 <div className="grid-container-contact-select">
                     <div className="reject-button"
-                         onClick={() => stayOnThePage()}>
+                         onClick={() => handleNavigation('/payment')}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -150,7 +143,7 @@ export function ContactComponent() {
                     <div className="confirm-button"
                          onClick={() => {
                              selectContactMethod()
-                             goAheadInTheRoute()
+                             handleNavigation('/output')
                          }}>
                         <div className="icon-wrapper-confirm">
                             <img
@@ -171,7 +164,7 @@ export function ContactComponent() {
                 </div>
                 <div className="grid-container-contact-select">
                     <div className="reject-button"
-                         onClick={() => stayOnThePage()}>
+                         onClick={() => handleNavigation('/payment')}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -182,7 +175,7 @@ export function ContactComponent() {
                     </div>
                     <div className="confirm-button" onClick={() => {
                         selectContactMethod()
-                        goAheadInTheRoute()
+                        handleNavigation('/output')
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img
@@ -203,7 +196,7 @@ export function ContactComponent() {
                 </div>
                 <div className="grid-container-contact-select">
                     <div className="reject-button"
-                         onClick={() => stayOnThePage()}>
+                         onClick={() => handleNavigation('/payment')}>
                         <div className="icon-wrapper-reject">
                             <img
                                 className="icon-reject"
@@ -214,7 +207,7 @@ export function ContactComponent() {
                     </div>
                     <div className="confirm-button" onClick={() => {
                         selectContactMethod()
-                        goAheadInTheRoute()
+                        handleNavigation('/output')
                     }}>
                         <div className="icon-wrapper-confirm">
                             <img

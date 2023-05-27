@@ -10,19 +10,16 @@ export function CategoriesComponent() {
 
     let navigate = useNavigate();
 
-    const goBackInTheRoute = () => {
-        navigate('/', {replace: true});
-    }
-    const goAheadInTheRoute = () => {
-        navigate('/payment', {replace: true});
-    }
+    const handleNavigation = (route: string) => {
+        navigate(route, { replace: true });
+    };
 
     return (
         <div className="page-container">
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
-                     onClick={goBackInTheRoute}>
+                     onClick={() => handleNavigation('/')}>
                     <img
                         className="back-icon"
                         alt=""
@@ -34,9 +31,7 @@ export function CategoriesComponent() {
             <div className="grid-container">
                 <div className="share-button" onClick={() => {
                     setCurrentState({...currentState, category: "Teilen"})
-                    goAheadInTheRoute();
-                    console.log(currentState.adType)
-                    console.log(currentState.category)
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -51,7 +46,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="clean-button" onClick={() => {
                     setCurrentState({...currentState, category: "Reinigungsarbeiten"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -66,7 +61,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="maintenance-button" onClick={() => {
                     setCurrentState({...currentState, category: "Gebäudeunterhalt & Technik"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -86,7 +81,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="support-button" onClick={() => {
                     setCurrentState({...currentState, category: "Alltagsunterstützung"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -101,7 +96,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="catering-button" onClick={() => {
                     setCurrentState({...currentState, category: "Verpflegung"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -116,7 +111,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="transport-button" onClick={() => {
                     setCurrentState({...currentState, category: "Transport"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -136,7 +131,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="admin-button" onClick={() => {
                     setCurrentState({...currentState, category: "Administration"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -152,7 +147,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="pet-button" onClick={() => {
                     setCurrentState({...currentState, category: "Haustier"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -167,7 +162,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="children-button" onClick={() => {
                     setCurrentState({...currentState, category: "Kinder"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -182,7 +177,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="leisure-button" onClick={() => {
                     setCurrentState({...currentState, category: "Freizeigestaltung"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -197,7 +192,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="courses-button" onClick={() => {
                     setCurrentState({...currentState, category: "Kurse & Schulungen"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -212,7 +207,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="products-button" onClick={() => {
                     setCurrentState({...currentState, category: "Produkte"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -227,7 +222,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="jobs-button" onClick={() => {
                     setCurrentState({...currentState, category: "Arbeitsstellen"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -242,7 +237,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="apprenticeships-button" onClick={() => {
                     setCurrentState({...currentState, category: "Lehrstellen"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -257,7 +252,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="consulting-button" onClick={() => {
                     setCurrentState({...currentState, category: "Beratung"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
@@ -272,7 +267,7 @@ export function CategoriesComponent() {
                 </div>
                 <div className="diverses-button" onClick={() => {
                     setCurrentState({...currentState, category: "Diverses"})
-                    goAheadInTheRoute();
+                    handleNavigation('/payment')
                 }}>
                     <div className="icon-wrapper">
                         <img
