@@ -101,6 +101,7 @@ export function OutputComponent() {
             </div>
             <div className="refresh-icon-wrapper" onClick={() => {
                 getAdText()
+                setMessage(null)
                 handleNavigation('/output')
             }}>
                 <img
