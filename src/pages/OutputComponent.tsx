@@ -3,8 +3,12 @@ import {useNavigate} from "react-router-dom";
 import {StateContext} from "../StateContext";
 import Timeline from "./Timeline";
 import "./OutputComponent.css";
+import {ThreeDots} from "react-loader-spinner";
 
 export function OutputComponent() {
+
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
 
     const {currentState, setCurrentState} = useContext(StateContext);
 
@@ -18,7 +22,7 @@ export function OutputComponent() {
     let navigate = useNavigate();
 
     const handleNavigation = (route: string) => {
-        navigate(route, { replace: true });
+        navigate(route, {replace: true});
     };
 
     function getAdText() {
@@ -38,6 +42,8 @@ export function OutputComponent() {
                 const data = await response.json()
                 console.log(data)
                 setMessage(data.choices[0].message.content)
+                setTitle(data.choices[0].message.content.substring(6).split('"Titel:').pop().split('Beschreibung:')[0])
+                setDescription(data.choices[0].message.content.split('Beschreibung:')[1])
             } catch (error) {
                 console.error(error)
             }
@@ -55,6 +61,8 @@ export function OutputComponent() {
         }
     }, [message]);
 
+    let isLoading = message == null
+
     return (
         <div className="page-container">
             <div className="header">
@@ -70,7 +78,25 @@ export function OutputComponent() {
             </div>
             <div className="frame-parent-text">
                 <div className="text-settings-parent">
-                    <div className="text">{message}</div>
+                    <div className="text">
+                        {isLoading && <ThreeDots
+                            height="100"
+                            width="100"
+                            radius="9"
+                            color="var(--white)"
+                            ariaLabel="three-dots-loading"
+                            wrapperStyle={{}}
+                            visible={true}
+                        />}
+                        {/*{message}*/}
+                        {!isLoading &&
+                        <span className="category-name-txt-container">
+                            <span className="content-line-1"><b
+                                style={{color: "whitesmoke"}}>Titel: </b>{title}</span><br/>
+                            <span className="content-2"><b style={{color: "whitesmoke"}}>Beschreibung: </b>{description}</span>
+                        </span>
+                        }
+                    </div>
                 </div>
             </div>
             <div className="refresh-icon-wrapper" onClick={() => {
