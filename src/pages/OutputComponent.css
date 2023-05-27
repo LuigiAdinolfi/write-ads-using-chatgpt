@@ -1,6 +1,6 @@
 .grid-container-output-select {
     position: relative;
-    top: 26rem;
+    top: 32rem;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 16rem);
@@ -54,7 +54,7 @@
     background-color: #4F4F4F;
     width: 120rem;
     height: fit-content;
-    min-height: 16rem;
+    min-height: 17.2rem;
     overflow: hidden;
     flex-shrink: 0;
     flex-direction: row;
