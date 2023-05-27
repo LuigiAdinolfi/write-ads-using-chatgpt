@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {StateContext} from "../StateContext";
-import Timeline from "./Timeline";
+import TimelineComponent from "./TimelineComponent";
 import "./OutputComponent.css";
 import {ThreeDots} from "react-loader-spinner";
 
@@ -140,7 +140,7 @@ export function OutputComponent() {
                     </div>
                 </div>
             </div>
-            <Timeline/>
+            <TimelineComponent/>
         </div>
     );
 }

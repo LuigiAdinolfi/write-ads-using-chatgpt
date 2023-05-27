@@ -1,6 +1,6 @@
 import {useLocation} from "react-router-dom";
 
-export function Timeline() {
+export function TimelineComponent() {
 
     const {pathname} = useLocation();
     return (
@@ -46,5 +46,5 @@ export function Timeline() {
     )
 }
 
-export default Timeline
+export default TimelineComponent
 

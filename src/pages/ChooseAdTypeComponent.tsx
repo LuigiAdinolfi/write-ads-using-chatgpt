@@ -2,8 +2,8 @@ import "./ChooseAdTypeComponent.css";
 import {useContext} from "react";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import Timeline from "./Timeline";
-import "./Timeline.css"
+import TimelineComponent from "./TimelineComponent";
+import "./TimelineComponent.css"
 
 export function ChooseAdTypeComponent() {
 
@@ -62,7 +62,7 @@ export function ChooseAdTypeComponent() {
                     </div>
                 </div>
             </div>
-            <Timeline/>
+            <TimelineComponent/>
         </div>
 
     );

@@ -2,7 +2,7 @@ import "./CategoriesComponent.css";
 import {useContext} from "react";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import Timeline from "./Timeline";
+import TimelineComponent from "./TimelineComponent";
 
 export function CategoriesComponent() {
 
@@ -281,7 +281,7 @@ export function CategoriesComponent() {
                     </div>
                 </div>
             </div>
-            <Timeline/>
+            <TimelineComponent/>
         </div>
     );
 }

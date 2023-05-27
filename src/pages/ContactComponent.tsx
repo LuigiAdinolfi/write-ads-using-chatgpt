@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import "./ContactComponent.css";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import Timeline from "./Timeline";
+import TimelineComponent from "./TimelineComponent";
 
 export function ContactComponent() {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
@@ -219,7 +219,7 @@ export function ContactComponent() {
                     </div>
                 </div>
             </div>}
-            <Timeline/>
+            <TimelineComponent/>
         </div>
     );
 }

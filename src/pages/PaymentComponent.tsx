@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import "./PaymentComponent.css";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import Timeline from "./Timeline";
+import TimelineComponent from "./TimelineComponent";
 
 export function PaymentComponent() {
     const [hours, setHours] = React.useState(0);
@@ -316,7 +316,7 @@ export function PaymentComponent() {
                     </div>
                 </div>
             </div>}
-            <Timeline/>
+            <TimelineComponent/>
         </div>
     );
 }
