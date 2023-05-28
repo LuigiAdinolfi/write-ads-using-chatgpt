@@ -1,18 +1,16 @@
-image: node:latest
-
-stages:
-  - deploy
-
-before_script:
-  - apt-get update -qq
-  - apt-get install -y rsync
+image: node
 
 pages:
   stage: deploy
+  cache:
+    paths:
+      - node_modules/
   script:
     - npm install
     - npm run build
-    - rsync -avz --delete dist/ $CI_PROJECT_DIR/public/
+    - rm -rf public
+    - cp build/index.html build/404.html
+    - mv build public
   artifacts:
     paths:
       - public
