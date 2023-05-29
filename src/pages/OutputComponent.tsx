@@ -88,7 +88,6 @@ export function OutputComponent() {
                             wrapperStyle={{}}
                             visible={true}
                         />}
-                        {/*{message}*/}
                         {!isLoading &&
                         <span className="category-name-txt-container">
                             <span className="content-line-1"><b

@@ -70,7 +70,7 @@ export function ContactComponent() {
                     />
                 </div>
             </div>
-            <div className="subtitle">Kontaktmöglichkeit</div>
+            <div className="subtitle">Wie kann man dich erreichen?</div>
             <div className="grid-container-contact">
                 <div className="email-button"
                      style={{opacity: showingEmailButton ? 1.0 : 0.3}}

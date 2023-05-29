@@ -123,7 +123,7 @@ export function PaymentComponent() {
                     />
                 </div>
             </div>
-            <div className="subtitle">Preis</div>
+            <div className="subtitle">Bezahlung</div>
             <div className="grid-container-payment">
                 <div className="money-button"
                      style={{opacity: showingMoneyButton ? 1.0 : 0.3}}
