@@ -1,11 +1,11 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {StateContext} from "../StateContext";
-import TimelineComponent from "./TimelineComponent";
-import "./OutputComponent.css";
+import Timeline from "../components/Timeline";
+import "./OutputPage.css";
 import {ThreeDots} from "react-loader-spinner";
 
-export function OutputComponent() {
+export function OutputPage() {
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -13,9 +13,9 @@ export function OutputComponent() {
     const {currentState, setCurrentState} = useContext(StateContext);
 
     const [textRequest] = useState(`Schreiben Sie mir ein Inserat unterteilt in 
-    'Titel' und 'Beschreibung' mit folgenden Stichworten: Was: ${currentState.adType}, 
-    Kategorie: ${currentState.category}, Bezahlung: ${currentState.paymentMethod}, 
-    Kontakt: ${currentState.contactMethod}`);
+    'Titel' und 'Beschreibung' mit folgenden Stichworten: Was: '${currentState.adType}', 
+    Kategorie: '${currentState.category}', Bezahlung: '${currentState.paymentMethod}', 
+    Kontakt: '${currentState.contactMethod}'`);
 
     const [message, setMessage] = useState(null)
 
@@ -65,7 +65,7 @@ export function OutputComponent() {
 
     return (
         <div className="page-container">
-            <TimelineComponent/>
+            <Timeline/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
@@ -145,4 +145,4 @@ export function OutputComponent() {
     );
 }
 
-export default OutputComponent;
+export default OutputPage;

@@ -4,12 +4,12 @@ import {
     useNavigationType,
     useLocation,
 } from "react-router-dom";
-import CategoriesComponent from "./pages/CategoriesComponent";
+import CategoriesPage from "./pages/CategoriesPage";
 import {useEffect, useState} from "react";
-import ChooseAdTypeComponent from "./pages/ChooseAdTypeComponent";
-import PaymentComponent from "./pages/PaymentComponent";
-import ContactComponent from "./pages/ContactComponent";
-import OutputComponent from "./pages/OutputComponent";
+import ChooseAdTypePage from "./pages/ChooseAdTypePage";
+import PaymentPage from "./pages/PaymentPage";
+import ContactPage from "./pages/ContactPage";
+import OutputPage from "./pages/OutputPage";
 import {initialFullState} from "./State";
 import {StateContext} from "./StateContext";
 
@@ -54,11 +54,11 @@ function App() {
     return (
         <StateContext.Provider value={{currentState, setCurrentState}}>
             <Routes>
-                <Route path="/" element={<ChooseAdTypeComponent/>}/>
-                <Route path="/categories" element={<CategoriesComponent/>}/>
-                <Route path="/payment" element={<PaymentComponent/>}/>
-                <Route path="/contact" element={<ContactComponent/>}/>
-                <Route path="/output" element={<OutputComponent/>}/>
+                <Route path="/" element={<ChooseAdTypePage/>}/>
+                <Route path="/categories" element={<CategoriesPage/>}/>
+                <Route path="/payment" element={<PaymentPage/>}/>
+                <Route path="/contact" element={<ContactPage/>}/>
+                <Route path="/output" element={<OutputPage/>}/>
             </Routes>
         </StateContext.Provider>
     );

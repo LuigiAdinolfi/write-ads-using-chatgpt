@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
-import "./ContactComponent.css";
+import "./ContactPage.css";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import TimelineComponent from "./TimelineComponent";
+import Timeline from "../components/Timeline";
 
-export function ContactComponent() {
+export function ContactPage() {
     const [showEmailSettings, setShowEmailSettings] = React.useState(false)
     const [showPhoneSettings, setShowPhoneSettings] = React.useState(false)
     const [showFormSettings, setShowFormSettings] = React.useState(false)
@@ -59,7 +59,7 @@ export function ContactComponent() {
 
     return (
         <div className="page-container">
-            <TimelineComponent/>
+            <Timeline/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
@@ -224,4 +224,4 @@ export function ContactComponent() {
     );
 }
 
-export default ContactComponent;
+export default ContactPage;

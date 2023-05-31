@@ -1,10 +1,10 @@
-import "./CategoriesComponent.css";
+import "./CategoriesPage.css";
 import {useContext} from "react";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import TimelineComponent from "./TimelineComponent";
+import Timeline from "../components/Timeline";
 
-export function CategoriesComponent() {
+export function CategoriesPage() {
 
     const {currentState, setCurrentState} = useContext(StateContext);
 
@@ -16,7 +16,7 @@ export function CategoriesComponent() {
 
     return (
         <div className="page-container">
-            <TimelineComponent/>
+            <Timeline/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
@@ -286,4 +286,4 @@ export function CategoriesComponent() {
     );
 }
 
-export default CategoriesComponent;
+export default CategoriesPage;

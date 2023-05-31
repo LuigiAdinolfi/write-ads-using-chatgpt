@@ -1,11 +1,11 @@
-import "./ChooseAdTypeComponent.css";
+import "./ChooseAdTypePage.css";
 import {useContext} from "react";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import TimelineComponent from "./TimelineComponent";
-import "./TimelineComponent.css"
+import Timeline from "../components/Timeline";
+import "../components/Timeline.css"
 
-export function ChooseAdTypeComponent() {
+export function ChooseAdTypePage() {
 
     const {currentState, setCurrentState} = useContext(StateContext);
 
@@ -17,7 +17,7 @@ export function ChooseAdTypeComponent() {
 
     return (
         <div className="page-container">
-            <TimelineComponent/>
+            <Timeline/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper">
@@ -67,4 +67,4 @@ export function ChooseAdTypeComponent() {
     );
 }
 
-export default ChooseAdTypeComponent;
+export default ChooseAdTypePage;

@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
-import "./PaymentComponent.css";
+import "./PaymentPage.css";
 import {StateContext} from "../StateContext";
 import {useNavigate} from "react-router-dom";
-import TimelineComponent from "./TimelineComponent";
+import Timeline from "../components/Timeline";
 
-export function PaymentComponent() {
+export function PaymentPage() {
     const [hours, setHours] = React.useState(0);
     const [moneyAmount, setMoneyAmount] = React.useState(0);
     const [showMoneySettings, setShowMoneySettings] = React.useState(false)
@@ -112,7 +112,7 @@ export function PaymentComponent() {
 
     return (
         <div className="page-container">
-            <TimelineComponent/>
+            <Timeline/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
@@ -321,4 +321,4 @@ export function PaymentComponent() {
     );
 }
 
-export default PaymentComponent;
+export default PaymentPage;
