@@ -12,11 +12,12 @@ export function ChooseAdTypeComponent() {
     let navigate = useNavigate();
 
     const handleNavigation = (route: string) => {
-        navigate(route, { replace: true });
+        navigate(route, {replace: true});
     };
 
     return (
         <div className="page-container">
+            <TimelineComponent/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper">
@@ -62,9 +63,7 @@ export function ChooseAdTypeComponent() {
                     </div>
                 </div>
             </div>
-            <TimelineComponent/>
         </div>
-
     );
 }
 

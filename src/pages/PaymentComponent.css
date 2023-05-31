@@ -131,10 +131,6 @@
     background-color: var(--color-darkslategray);
 }
 
-
-
-
-
 .empty-settings-parent {
     opacity: 0;
     border-radius: var(--br-base);

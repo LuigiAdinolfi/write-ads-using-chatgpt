@@ -65,6 +65,7 @@ export function OutputComponent() {
 
     return (
         <div className="page-container">
+            <TimelineComponent/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
@@ -89,7 +90,7 @@ export function OutputComponent() {
                             visible={true}
                         />}
                         {!isLoading &&
-                        <span className="category-name-txt-container">
+                            <span className="category-name-txt-container">
                             <span className="content-line-1"><b
                                 style={{color: "whitesmoke"}}>Titel: </b>{title}</span><br/>
                             <span className="content-2"><b style={{color: "whitesmoke"}}>Beschreibung: </b>{description}</span>
@@ -140,7 +141,6 @@ export function OutputComponent() {
                     </div>
                 </div>
             </div>
-            <TimelineComponent/>
         </div>
     );
 }

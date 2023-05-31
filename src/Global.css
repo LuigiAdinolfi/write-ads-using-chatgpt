@@ -30,15 +30,7 @@ body {
     font-size: var(--font-size-base);
     font-family: var(--font-work-sans);
     color: var(--white);
-    margin-top: 10rem;
-
-
-    /*center content*/
-    /*height: 100vh;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    margin-top: 4rem;
 }
 
 .header {
@@ -57,7 +49,7 @@ body {
 .back-icon-wrapper {
     position: absolute;
     top: 3.4rem;
-    right: 26rem;
+    right: 31rem;
     width: 8rem;
     height: 5.6rem;
     display: flex;

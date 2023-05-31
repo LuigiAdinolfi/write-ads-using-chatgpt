@@ -21,7 +21,7 @@ export function PaymentComponent() {
     let navigate = useNavigate();
 
     const handleNavigation = (route: string) => {
-        navigate(route, { replace: true });
+        navigate(route, {replace: true});
     };
 
     function incrementHours() {
@@ -112,6 +112,7 @@ export function PaymentComponent() {
 
     return (
         <div className="page-container">
+            <TimelineComponent/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
@@ -316,7 +317,6 @@ export function PaymentComponent() {
                     </div>
                 </div>
             </div>}
-            <TimelineComponent/>
         </div>
     );
 }

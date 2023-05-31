@@ -17,7 +17,7 @@ export function ContactComponent() {
     let navigate = useNavigate();
 
     const handleNavigation = (route: string) => {
-        navigate(route, { replace: true });
+        navigate(route, {replace: true});
     };
 
     function selectEmailSettings() {
@@ -59,6 +59,7 @@ export function ContactComponent() {
 
     return (
         <div className="page-container">
+            <TimelineComponent/>
             <div className="header">
                 <div className="title">Marktplatz</div>
                 <div className="back-icon-wrapper"
@@ -219,7 +220,6 @@ export function ContactComponent() {
                     </div>
                 </div>
             </div>}
-            <TimelineComponent/>
         </div>
     );
 }
