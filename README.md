@@ -4,7 +4,7 @@
 <i>"Erstellung von Inseraten für One11 auf LivePaper"</i> is an IP5 project of the University of Applied Sciences Northwestern Switzerland (FHNW).<br>
 The aim of the prototype is to enable people with low technical knowledge to create advertisements on LivePaper for the one11 platform.
 
-## Installation
+## Setup
 After cloning the project into a folder of your choice, run the following commands in your project directory.
 
 <b>1. Install dependencies</b>
